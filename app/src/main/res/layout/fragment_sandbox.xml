@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fr.astazou.cockpitplusplus.fragments.M2kC_PPA">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Sandbox_intro"
+        android:layout_margin="6dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Sandbox_example"
+        android:layout_margin="6dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:width="64dp"
+            android:inputType="number"
+            android:hint="@string/Sandbox_code"
+            android:maxLines="1"/>
+
+        <EditText
+            android:id="@+id/editTextDevice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:width="64dp"
+            android:inputType="number"
+            android:hint="@string/Sandbox_device"
+            android:maxLines="1"/>
+
+        <EditText
+            android:id="@+id/editTextButtonType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:width="64dp"
+            android:inputType="number"
+            android:hint="@string/Sandbox_type"
+            android:maxLines="1"/>
+
+        <EditText
+            android:id="@+id/editTextValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:width="64dp"
+            android:hint="@string/Sandbox_value"
+            android:maxLines="1"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#bbb"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="6dp"
+        android:textSize="24sp"
+        android:text="@string/Sandbox_send"/>
+
+</LinearLayout>

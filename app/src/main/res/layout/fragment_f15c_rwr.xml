@@ -1,0 +1,48 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix"
+    tools:context="fr.astazou.cockpitplusplus.fragments.F15C_RWR">
+
+    <ImageView
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/f15c_rwr"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:contentDescription="@null"/>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"/>
+
+            <RelativeLayout
+                android:id="@+id/screen"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="17"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

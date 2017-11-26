@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="android:buttonStyle">@style/AppTheme.hemi_head_font</item>
+    </style>
+
+    <style name="AppThemeM2kC" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+    <style name="PagerTabStripText">
+        <item name="android:textStyle">bold</item>
+        <item name="fontPath">fonts/hemi_head_bd_it.ttf</item>
+    </style>
+
+    <style name="AppTheme.Widget"/>
+
+    <style name="AppTheme.hemi_head_font" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="fontPath">fonts/hemi_head_bd_it.ttf</item>
+    </style>
+
+
+</resources>

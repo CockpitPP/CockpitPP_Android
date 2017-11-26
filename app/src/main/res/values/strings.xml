@@ -1,0 +1,160 @@
+<resources>
+
+    <!-- General -->
+    <string name="app_name">Cockpit++</string>
+    <string name="subTitle">for DCS</string>
+    <string name="beta">beta</string>
+    <string name="not_available">Not available yet</string>
+    <string name="wrong_module_1">These instruments can\'t work for the module </string>
+    <string name="wrong_module_2">. Please select the right module</string>
+    <string name="wrong_module_2bis">.\nI loaded the correct screen for you ;-)</string>
+    <string name="wrong_lua_version">Your Cockpit++.lua is not up do date, please download and install the last version of the Cockpit++.lua</string>
+    <string name="wrong_app_version">Your Cockpit++ application is not up do date, please install the new version</string>
+    <string name="quitAgain">Click again to leave</string>
+    <string name="version">version</string>
+    <string name="HeadKey">Cockpit++</string>
+    <string name="teasing">May be the next one&#8230; \n\n¯\\_(ツ)_/¯</string>
+    <string name="need_update_lua">To enjoy the new features, you need to download and install into the scripts folder the new Cockpit++.lua file\n\nMore information in the \"Install guide\"</string>
+    <string name="ok">OK</string>
+
+    <!-- Menu -->
+    <string name="menu_a10c">A-10C Warthog</string>
+    <string name="menu_ajs37">AJS-37 Viggen</string>
+    <string name="menu_c101">C-101EB</string>
+    <string name="menu_f15c">F-15C Eagle</string>
+    <string name="menu_f5e">F-5E Tiger II</string>
+    <string name="menu_l39">L-39 Albatros</string>
+    <string name="menu_mi8">Mi-8MTV2</string>
+    <string name="menu_mig21">Mig-21bis</string>
+    <string name="menu_mig29">Mig-29 Fulcrum</string>
+    <string name="menu_m2kc">Mirage 2000C</string>
+    <string name="menu_sa342">SA342 Gazelle</string>
+    <string name="menu_su25">Su-25 Frogfoot</string>
+    <string name="menu_su27">Su-27 Flanker</string>
+    <string name="menu_su33">Su-33 Flanker D</string>
+    <string name="menu_huey">UH-1H Huey</string>
+    <string name="menu_guide">Install guide</string>
+    <string name="menu_not_guide">Not working?</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_exit">Exit</string>
+
+    <!-- Guide -->
+    <string name="guide_intro">How to make DCS communicating with the app?</string>
+    <string name="guide_subintro">To communicate by wifi, your Android and your DCS must know the IP address of each other, you will find here the steps to configure everything</string>
+    <string name="guide_step1">1) Download the <b>Cockpit++.lua</b></string>
+    <string name="guide_step1dl">from here: <a href="https://github.com/frasta/luaForCockpitPlusPlus/archive/master.zip">https://github.com/frasta/luaForCockpitPlusPlus/archive/master.zip</a> (link also available in the app\'s description on the Playstore, type \"Cockpit DCS astazou\" in the PlayStore)</string>
+    <string name="guide_step2">2) Go in <u>C:\\Users\\yourUser\\Saved Games\\DCS\\Scripts</u> folder (create if not exist)</string>
+    <string name="guide_step3">3) Open the <b>export.lua</b> file (create it if not exist) and add the line:</string>
+    <string name="guide_step3bis"><i>local Cockpitpp=require(\'lfs\');dofile(Cockpitpp.writedir()..\'Scripts/Cockpit++.lua\')</i></string>
+    <string name="guide_step3ter">if you don\'t know how to create the Export.lua file, you can take the one you downloaded with Cockpit++.lua</string>
+    <string name="guide_step4">4) In the same folder, add the file <b>Cockpit++.lua</b>\nNow you should have this:</string>
+    <string name="guide_step5">5) Open the <b>Cockpit++.lua</b> and add the IP address of your Android phone (You will find the Android IP in the Cockpit++ application, in "settings", you must be connected by wifi on the same network than your computer)</string>
+    <string name="guide_step5Example1">For example, if you Android IP is <b>192.168.0.12</b>, you must write:</string>
+    <string name="guide_step5Example2">Of course you can use several Android devices in the same time, just add other Android IP if you want to use Cockpit++ with more than 1 device:</string>
+    <string name="guide_step6">6) In the app, go to Settings, add your computer\'s IP and the two ports which are in the <b>Cockpit++.lua</b>\nYou will get your computer\'s IP by doing:\n - Windows touch + \"R\"\n - typing \"cmd\" and pressing \"enter\"\n - typing \"ipconfig\" in the console\n - get your ipv4 address</string>
+    <string name="guide_step7">7) Now it should work :)</string>
+    <string name="guide_step8">8) Not working? check the previous steps and/or restart the app</string>
+    <string name="guide_step9">9) Still not working? Then go in <b><u><i>Not working?</i></u></b> in the app, you will have some ideas of possible problems with the solution </string>
+    <string name="guide_stepTrick"><b>Trick</b>: the LUA files must be saved <u>before</u> you launch DCS</string>
+    <string name="guide_good_flight">Good flight sir! O7</string>
+
+    <!-- Not working -->
+    <string name="not_working_intro">Still having trouble to configure the app?</string>
+    <string name="not_working_subintro">If you are sure you have exactly followed the installation guide and you still have problem to connect the app with the game, here you will find some ideas about possible problems</string>
+    <string name="not_working_step1">1) In the <b>Cockpit++.lua</b>, are you sure you typed your Android IP like this:\nlocal clientIP={\"192.168.0.10\"}\nand not like this:\nlocal clientIP={192.168.0.10}\n?</string>
+    <string name="not_working_step2">2) In the <b>Cockpit++.lua</b>, are you sure you didn\'t touch/remove/add any \"--\" characters? They are used add comments in the script, they are not interpreted by the computer. You can manipulate them if you have some programming knowledges</string>
+    <string name="not_working_step3">3) Are you sure your computer where DCS is running is on the same network than your Android?</string>
+    <string name="not_working_step4">4) Maybe you have a blocking antiVirus/firewall?</string>
+    <string name="not_working_step5">5) Maybe your refused some permission on your Android for this app?</string>
+    <string name="not_working_step6">6) Did you activate your wifi/wireless on your Android?</string>
+    <string name="not_working_step7">7) If you have doubts about your Cockpit.lua configuration because default <b><i>Notepad</i></b> in your Windows isn\'t clear enough for you, I suggest you to use <b><i>Notepad++</i></b> instead of the basic <b><i>Notepad</i></b>,then the script will be easier to read, and you will see difference between the executed code and the commented lines (for explanations)</string>
+    <string name="not_working_step8">8) If the app shows the data from the game but you can\'t send actions to DCS, it means you made a mistake in the Android app</string>
+    <string name="not_working_step9">9) If you can send actions to DCS but the app doesn\'t show the data on the panel in the app , it means you made a mistake in the Cockpit+.lua</string>
+
+    <!-- About -->
+    <string name="about_by_who">By <i><b>Astazou</b></i>, <i>Simon CHEVALIER</i></string>
+    <string name="about_intro">Cockpit++ is an application for DCS (Digital Combat Simulator), if you don\'t own the game with proper modules this application is useless for you, sorry bro!</string>
+    <string name="about_thanks">I would like to thank everybody who helped me for this app:\n- friends\n- ED\'s community ( <a href="https://forums.eagle.ru/">forums.eagle.ru</a> )\n- CheckSix\'s community ( <a href="http://www.checksix-forums.com/index.php">checksix-forums.com</a> )\n- Hoggit\'s community ( <a href="https://www.reddit.com/r/hoggit/">www.reddit.com/r/hoggit/</a> )\n- Razbam</string>
+    <string name="about_thanks_photo">Background image is from <a href="https://pixabay.com/fr/ciel-nuage-coucher-de-soleil-gris-1054733/">pixabay.com/fr/ciel-nuage-coucher-de-soleil-gris-1054733/</a> </string>
+    <string name="about_thanks_font">Font are from <a href="http://www.dafont.com/fr/digital-display-tfb.font">http://www.dafont.com/fr/digital-display-tfb.font</a> and from  <a href="http://www.dafont.com/fr/hemi-head.font">http://www.dafont.com/fr/hemi-head.font</a> </string>
+    <string name="about_thanks_Huertix">Special thanks to <b><i>Huertix</i></b>, his app for the <b><i>A-10C Warthog</i></b> motivated me to developp Cockpit++, here is his app <a href="https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta">https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta</a> </string>
+    <string name="about_contributors">Also special thanks to contributors of this project:\n- **Your nickname if you contribute :D** </string>
+    <string name="about_github">Do you want to take part of the project? Feel free to contribute here:<a href="https://github.com/">https://github.com/</a> (real link will appear when the code will be proper enough ;) ) </string>
+
+    <!-- ChangeLog -->
+    <string name="changelog">ChangeLog</string>
+    <string name="changelog_1">05&#8211;29&#8211;2017:\n• PCA for Mirage 2000C by Razbam\n• PPA for Mirage 2000C by Razbam\n• RWR for F-15C by ED\n</string>
+    <string name="changelog_2">09&#8211;14&#8211;2017:\n• INS for Mirage 2000C by Razbam\n• INS Knobs for Mirage 2000C by Razbam\n• Armament Panel for the Huey by BelSimTek\n</string>
+    <string name="changelog_3">11&#8211;16&#8211;2017:\n• Better stability for Android 7 users\n• Fix bug of freeze after ejection\n• User can\'t anymore enter text in ports\n• Added explanations in the installation guide\n</string>
+
+    <!-- FAQ -->
+    <string name="faq">Frequently Asked Question</string>
+    <string name="faq_beta"><b>- Why the app is in \"beta\" and when it will be a real release?</b>\nI published a beta version for you to use the app in this state, the app will not be \"beta\" anymore when all the code will be published on GitHub, I just need to do some things first (clean, comment, doc, &#8230;)</string>
+    <string name="faq_other_module"><b>- Do you plan to do more panels and/or more modules?</b>\nI want it! Even if the app was initially done only for the PCA and the PPA of the Mirage 2000C, I made the app to work with other panels/modules, I will probably do other panels (not only for the Mirage 2000C), I also have to own other modules</string>
+    <string name="faq_dcs_version"><b>- Is it for DCS 1.5 or DCS 2.1?</b>\nFor both of them ;)</string>
+    <string name="faq_drain_battery"><b>- I noticed tha app drains the battery, is it normal?</b>\nYes, the app is communicating a lot with the computer using UDP protocol, it needs energy</string>
+    <string name="faq_name"><b>- Why \"Cockpit++\"?</b>\nBecause the app \'extends\' your cockpit :)</string>
+    <string name="faq_ios_plan"><b>- Any iOS plans?</b>\nFrom me, no, not for now, for one main reason: I would have to buy a mac, an ipad and Apple dev\' licence. But my code will be shared, we can imagine the .LUA code can be used by someone who wants to develop the iOS version ;)</string>
+    <string name="faq_multi_device"><b>- Can I use several devices?</b>\nYes, just set properly the .lua file with Androids IP</string>
+    <string name="faq_how_it_works"><b>- How it works?</b>\nDCS provides lua access to interact with the game, so I made a lua file to communicate by UDP with android devices using the wifi</string>
+    <string name="faq_contribute"><b>- I want to contribute and make a panel, how can I do?</b>\n(Wait the project to be on GitHub first)Come on the project\'s GitHub and contribute</string>
+    <string name="faq_not_working"><b>- My app is not working, what can I do?</b>\nRefer to the \"Guide\" on the menu, properly check every steps and if the problems are still here, check the page \"Not working?\" on the menu</string>
+    <string name="faq_found_a_bug"><b>- I found a bug, what can I do to report it?</b>\n(Wait the project to be on GitHub first) then you can open a ticket</string>
+
+    <!-- Mirage 2000C -->
+    <string name="m2kc">M-2000C</string>
+    <string name="m2kc_pca">PCA</string>
+    <string name="m2kc_ppa">PPA</string>
+    <string name="m2kc_rwr">RWR</string>
+    <string name="m2kc_ins">INS</string>
+    <string name="m2kc_ins_knobs">INS knobs</string>
+    <string name="m2kc_mis">MIS</string>
+
+    <!-- F-15C Eagle -->
+    <string name="f15c" >F-15C</string>
+    <string name="f15c_rwr">RWR</string>
+
+    <!-- UH-1H Huey -->
+    <string name="uh1h">UH-1H</string>
+    <string name="uh1h_armament">Armament</string>
+
+    <!-- Sandbox -->
+    <string name="sandbox">SandBox</string>
+    <string name="Sandbox_intro">This screen is for developers or anyone who wants to send a command to DCS.</string>
+    <string name="Sandbox_example">For example, if you want to change jettison cover position in the Mirage 2000, you have to send:\n- code to interact = 3248\n- device in the cockpit = 6\n- type of button = 1\n- value = 1 or 0</string>
+    <string name="Sandbox_inputsNull">The inputs must be not null</string>
+    <string name="Sandbox_code">Code</string>
+    <string name="Sandbox_device">Device</string>
+    <string name="Sandbox_type">Type</string>
+    <string name="Sandbox_value">Value</string>
+    <string name="Sandbox_send">Send!</string>
+
+    <!-- Preferences -->
+    <string name="settings">Settings</string>
+    <string name="preferences">Parameters</string>
+    <string name="stateConnection">State connection</string>
+    <string name="ipAddress">IP Address </string>
+    <string name="ipAddressResult">IP Android: </string>
+    <string name="ipAddressOfYourComputer">IP Address of your computer</string>
+    <string name="dcsHostPort">DCS host port:</string>
+    <string name="android_port">Android port:</string>
+    <string name="notConnected">NOT CONNECTED</string>
+    <string name="connected">CONNECTED</string>
+    <string name="noIP">0.0.0.0</string>
+    <string name="needWifi">Please, connect to your wifi first</string>
+    <string name="exIpAddress">ex: 192.168.0.11</string>
+    <string name="exDCSPort">ex: 14801</string>
+    <string name="exAndroidPort">ex: 14800</string>
+    <!-- DO NOT TOUCH/TRANSLATE THIS SECTION -->
+    <string name="PREFERENCES_ANDROID_APP_VERSION" translatable="false">PREFERENCES_ANDROID_APP_VERSION</string>
+    <string name="PREFERENCES_ANDROID_IPADDRESS" translatable="false">PREFERENCES_ANDROID_IPADDRESS</string>
+    <string name="PREFERENCES_IPADDRESS" translatable="false">PREFERENCES_IPADDRESS</string>
+    <string name="PREFERENCES_IPADDRESS_default_value" translatable="false">192.168.0.11</string>
+    <string name="PREFERENCES_DCSPORT" translatable="false">PREFERENCES_DCSPORT</string>
+    <string name="PREFERENCES_DCSPORT_default_value" translatable="false">14801</string>
+    <string name="PREFERENCES_ANDROIDPORT" translatable="false">PREFERENCES_ANDROIDPORT</string>
+    <string name="PREFERENCES_ANDROIDPORT_default_value" translatable="false">14800</string>
+    <string name="PREFERENCES_CONNECTED" translatable="false">PREFERENCES_CONNECTED</string>
+</resources>

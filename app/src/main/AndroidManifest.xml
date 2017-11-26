@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fr.astazou.cockpitplusplus">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/mirage_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <activity
+            android:name="fr.astazou.cockpitplusplus.activities.Menu_Activity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="fr.astazou.cockpitplusplus.activities.M2kC_Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppThemeM2kC" />
+
+        <activity
+            android:name="fr.astazou.cockpitplusplus.activities.F15C_Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="fr.astazou.cockpitplusplus.activities.UH1H_Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="fr.astazou.cockpitplusplus.activities.Config_Activity"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name="fr.astazou.cockpitplusplus.activities.Guide_Activity"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name="fr.astazou.cockpitplusplus.activities.Not_Working_Activity"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name="fr.astazou.cockpitplusplus.activities.About_Activity"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name="fr.astazou.cockpitplusplus.activities.FAQ_Activity"
+            android:theme="@style/AppTheme" />
+
+        <service
+            android:name="fr.astazou.cockpitplusplus.services.Konector"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

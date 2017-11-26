@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <color name="text_color_default">#212</color>
+
+    <!-- Menu -->
+    <color name="menuBackground">#5321</color>
+    <color name="menuTextColor">#E6DFCD</color>
+    <color name="menuButtonTextColor">#E6DFCD</color>
+    <color name="menuButtonDisabledTextColor">#7000</color>
+    <color name="menuButtonPressed">#2ECD</color>
+    <color name="menuDivider">#E6DFCD</color>
+    <color name="guideDivider">#DDD</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <!-- Colors for Mirage 2000C module-->
+    <color name="m2kCBackground">#303A43</color>
+    <color name="m2kCWhite">#C3C2C7</color>
+    <color name="m2kCWhiteTransparent">#11FFFFFF</color>
+    <color name="m2kCWhiteTransparentPressed">#33FFFFFF</color>
+    <color name="m2kCGrey">#535257</color>
+    <color name="m2kCGreyDark">#535257</color>
+    <color name="m2kCGreen">#4a4</color>
+    <color name="m2kCYellow">#aa4</color>
+    <color name="m2kCRed">#F41</color>
+
+    <!-- Colors for the F-15C Eaglea -->
+    <color name="f15CBackground">#C3C2C7</color>
+    <color name="f15CText">#1F2823</color>
+    <color name="f15CRWRBackground">#8252</color>
+    <color name="f15CRWRColor">#03FF0A</color>
+
+    <!-- Colors for the UH-1H HUEY -->
+    <color name="uh1hBackground">#C3C2C7</color>
+    <color name="uh1hCText">#1F2823</color>
+
+</resources>
