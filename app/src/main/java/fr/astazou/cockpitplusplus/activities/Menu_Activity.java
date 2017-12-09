@@ -42,6 +42,7 @@ public class Menu_Activity extends Activity {
         //Bind the buttons from the screen
         Button a10c = (Button) findViewById(R.id.a10c);
         Button ajs37 = (Button) findViewById(R.id.ajs37);
+        Button av8bna = (Button) findViewById(R.id.av8bna);
         Button c101 = (Button) findViewById(R.id.c101);
         Button f15c = (Button) findViewById(R.id.f15c);
         Button f5e = (Button) findViewById(R.id.f5e);
@@ -69,6 +70,19 @@ public class Menu_Activity extends Activity {
                 showToast(R.string.not_available);
             }
         });
+        ajs37.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast(R.string.not_available);
+            }
+        });
+        av8bna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu_Activity.this, AV8BNA_Activity.class);
+                startActivity(intent);
+            }
+        });
         f5e.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,12 +96,6 @@ public class Menu_Activity extends Activity {
             }
         });
         su25.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast(R.string.not_available);
-            }
-        });
-        ajs37.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showToast(R.string.not_available);

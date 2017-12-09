@@ -2,8 +2,8 @@ package fr.astazou.cockpitplusplus.utils;
 
 /**
  * Created by astazou on 18/09/2016.
+ *
  */
-
 public enum UH1H_Commands {
 
     //Panel armament

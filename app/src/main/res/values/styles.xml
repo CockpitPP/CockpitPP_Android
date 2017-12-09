@@ -21,5 +21,9 @@
         <item name="fontPath">fonts/hemi_head_bd_it.ttf</item>
     </style>
 
+    <style name="SeekBarTransparent" parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">@color/transparent</item>
+    </style>
+
 
 </resources>

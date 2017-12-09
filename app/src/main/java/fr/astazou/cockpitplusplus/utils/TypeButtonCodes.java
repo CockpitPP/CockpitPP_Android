@@ -2,8 +2,8 @@ package fr.astazou.cockpitplusplus.utils;
 
 /**
  * Created by astazou on 22/04/2017.
+ *
  */
-
 public enum TypeButtonCodes {
 
     Simple(1),

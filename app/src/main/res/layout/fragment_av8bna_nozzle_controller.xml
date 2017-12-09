@@ -1,0 +1,76 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix"
+    tools:context="fr.astazou.cockpitplusplus.fragments.M2kC_INS">
+
+    <ImageView
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/av8bna_nozzle_bkg"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:contentDescription="@null"/>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="1"
+            android:orientation="vertical">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.45"/>
+
+            <fr.astazou.cockpitplusplus.custom_views.VerticalSeekBar
+                android:id="@+id/blocker"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.56"
+                android:max="100"
+                android:thumb="@drawable/av8bna_nozzle_bloker"
+                android:theme="@style/SeekBarTransparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
+            android:weightSum="1"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.17"/>
+
+            <fr.astazou.cockpitplusplus.custom_views.VerticalSeekBar
+                android:id="@+id/nozzle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.75"
+                android:max="100"
+                android:thumb="@drawable/av8bna_nozzle_controller"
+                android:theme="@style/SeekBarTransparent"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

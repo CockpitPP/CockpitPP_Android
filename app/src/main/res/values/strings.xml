@@ -18,6 +18,7 @@
     <string name="ok">OK</string>
 
     <!-- Menu -->
+    <string name="menu_av8bna">AV-8B Harrier</string>
     <string name="menu_a10c">A-10C Warthog</string>
     <string name="menu_ajs37">AJS-37 Viggen</string>
     <string name="menu_c101">C-101EB</string>
@@ -119,6 +120,10 @@
     <!-- UH-1H Huey -->
     <string name="uh1h">UH-1H</string>
     <string name="uh1h_armament">Armament</string>
+
+    <!-- AV-8B n/a Harrier -->
+    <string name="av8bna">AV8BNA</string>
+    <string name="av8bna_nozzle">Nozzle</string>
 
     <!-- Sandbox -->
     <string name="sandbox">SandBox</string>

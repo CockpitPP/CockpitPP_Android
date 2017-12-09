@@ -49,6 +49,19 @@
                 />
 
             <Button
+                android:id="@+id/av8bna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuButtonTextColor"
+                android:gravity="start|center_vertical"
+                android:scaleType="fitCenter"
+                android:padding="6dp"
+                android:background="@drawable/button_menu"
+                android:textSize="20sp"
+                android:text="@string/menu_av8bna"
+                />
+
+            <Button
                 android:id="@+id/c101"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -25,7 +25,7 @@
     <color name="m2kCYellow">#aa4</color>
     <color name="m2kCRed">#F41</color>
 
-    <!-- Colors for the F-15C Eaglea -->
+    <!-- Colors for the F-15C Eagle -->
     <color name="f15CBackground">#C3C2C7</color>
     <color name="f15CText">#1F2823</color>
     <color name="f15CRWRBackground">#8252</color>
@@ -33,6 +33,10 @@
 
     <!-- Colors for the UH-1H HUEY -->
     <color name="uh1hBackground">#C3C2C7</color>
-    <color name="uh1hCText">#1F2823</color>
+    <color name="uh1hText">#1F2823</color>
+
+    <!-- Colors for the UH-1H HUEY -->
+    <color name="av8bnaBackground">#34495F</color>
+    <color name="av8bnaText">#708BA6</color>
 
 </resources>

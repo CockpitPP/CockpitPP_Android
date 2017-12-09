@@ -4,7 +4,7 @@
     android:id="@+id/viewpager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/uh1hBackground"
+    android:background="@color/av8bnaBackground"
     android:keepScreenOn="true">
 
     <android.support.v4.view.PagerTabStrip
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/PagerTabStripText"
-        android:textColor="@color/uh1hText"
+        android:textColor="@color/av8bnaText"
         android:layout_gravity="top"/>
 
 </android.support.v4.view.ViewPager>

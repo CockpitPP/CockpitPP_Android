@@ -2,8 +2,8 @@ package fr.astazou.cockpitplusplus.utils;
 
 /**
  * Created by astazou on 13/09/2017.
+ *
  */
-
 public enum UH1H_Devices {
 
     ELEC_INTERFACE(1),

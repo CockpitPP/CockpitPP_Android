@@ -5,14 +5,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Created by astazou on 04/09/2016.
+ * Created by astazou on 09/12/2017.
  *
  */
-public class UH1H_PagerAdapter extends FragmentPagerAdapter {
+public class AV8BNA_PagerAdapter extends FragmentPagerAdapter {
 
     private String tabtitles[];
 
-    public UH1H_PagerAdapter(FragmentManager fm, String pTabtitles[]) {
+    public AV8BNA_PagerAdapter(FragmentManager fm, String pTabtitles[]) {
         super(fm);
         tabtitles = pTabtitles;
     }
@@ -27,10 +27,10 @@ public class UH1H_PagerAdapter extends FragmentPagerAdapter {
         Fragment fragment;
         switch (position) {
             case 0:
-                fragment = new UH1H_Armament();
+                fragment = new AV8BNA_NOZZLE_Controller();
                 break;
             default:
-                fragment = new UH1H_Armament();
+                fragment = new AV8BNA_NOZZLE_Controller();
 
         }
         return fragment;

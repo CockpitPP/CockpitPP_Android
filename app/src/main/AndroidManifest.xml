@@ -40,6 +40,11 @@
             android:theme="@style/AppTheme" />
 
         <activity
+            android:name="fr.astazou.cockpitplusplus.activities.AV8BNA_Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme" />
+
+        <activity
             android:name="fr.astazou.cockpitplusplus.activities.Config_Activity"
             android:theme="@style/AppTheme" />
 
