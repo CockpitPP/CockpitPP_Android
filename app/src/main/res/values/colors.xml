@@ -13,6 +13,7 @@
     <color name="menuDivider">#E6DFCD</color>
     <color name="guideDivider">#DDD</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="dialog_bkg">#5333</color>
 
     <!-- Colors for Mirage 2000C module-->
     <color name="m2kCBackground">#303A43</color>
@@ -36,7 +37,7 @@
     <color name="uh1hText">#1F2823</color>
 
     <!-- Colors for the UH-1H HUEY -->
-    <color name="av8bnaBackground">#34495F</color>
-    <color name="av8bnaText">#708BA6</color>
+    <color name="av8bnaBackground">#B5BAC0</color>
+    <color name="av8bnaText">#273134</color>
 
 </resources>

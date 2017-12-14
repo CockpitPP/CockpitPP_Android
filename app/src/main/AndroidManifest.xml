@@ -30,6 +30,11 @@
             android:theme="@style/AppThemeM2kC" />
 
         <activity
+            android:name="fr.astazou.cockpitplusplus.activities.M2kC_Activity_Tablet"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppThemeM2kC" />
+
+        <activity
             android:name="fr.astazou.cockpitplusplus.activities.F15C_Activity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme" />

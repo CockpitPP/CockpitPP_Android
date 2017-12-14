@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    android:background="@color/dialog_bkg">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/menuTextColor"
+        android:textSize="20sp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        fontPath="fonts/hemi_head_bd_it.ttf"
+        android:text="@string/menu_choose"
+        tools:ignore="MissingPrefix" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/btn_tablet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.95"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/button_dialog">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_tablet_android_yellow_24dp"
+                android:contentDescription="@null"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_choose_tablet"
+                android:textColor="@color/menuTextColor"
+                fontPath="fonts/hemi_head_bd_it.ttf"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"/>
+
+        <LinearLayout
+            android:id="@+id/btn_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.95"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/button_dialog">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_smartphone_yellow_24dp"
+                android:contentDescription="@null"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_choose_smartphone"
+                android:textColor="@color/menuTextColor"
+                fontPath="fonts/hemi_head_bd_it.ttf"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

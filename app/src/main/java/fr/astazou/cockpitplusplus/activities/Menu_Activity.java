@@ -1,20 +1,25 @@
 package fr.astazou.cockpitplusplus.activities;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import fr.astazou.cockpitplusplus.R;
@@ -146,8 +151,39 @@ public class Menu_Activity extends Activity {
         mirage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu_Activity.this, M2kC_Activity.class);
-                startActivity(intent);
+                /*
+                Intent intent;
+                if(isTablet()) {
+                    intent = new Intent(Menu_Activity.this, M2kC_Activity_Tablet.class);
+                } else {
+                    intent = new Intent(Menu_Activity.this, M2kC_Activity.class);
+                }
+                startActivity(intent);*/
+                // custom dialog
+                final Dialog dialog = new Dialog(Menu_Activity.this);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.mode_chooser);
+
+                LinearLayout btn_tablet = (LinearLayout) dialog.findViewById(R.id.btn_tablet);
+                btn_tablet.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        startActivity(M2kC_Activity_Tablet.class);
+                    }
+                });
+
+                LinearLayout btn_phone = (LinearLayout) dialog.findViewById(R.id.btn_phone);
+                btn_phone.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        startActivity(M2kC_Activity.class);
+                    }
+                });
+
+                dialog.show();
             }
         });
         huey.setOnClickListener(new View.OnClickListener() {
@@ -272,7 +308,7 @@ public class Menu_Activity extends Activity {
 
         //Fill the Dialog
         final String version = versionName;
-        final String changelog = getString(R.string.changelog_3) + "\n" + getString(R.string.changelog_2) + "\n" + getString(R.string.changelog_1);
+        final String changelog = getString(R.string.changelog_4) + "\n" +  getString(R.string.changelog_3) + "\n" + getString(R.string.changelog_2) + "\n" + getString(R.string.changelog_1);
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
@@ -372,6 +408,24 @@ public class Menu_Activity extends Activity {
      */
     public void showToast(int stringId){
         Toast.makeText(this,stringId,Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean isTablet() {
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        float yInches= metrics.heightPixels/metrics.ydpi;
+        float xInches= metrics.widthPixels/metrics.xdpi;
+        double diagonalInches = Math.sqrt(xInches*xInches + yInches*yInches);
+        if (diagonalInches>=6.5){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    public void startActivity(Class pActivity) {
+        startActivity(new Intent(Menu_Activity.this, pActivity));
     }
 }
 

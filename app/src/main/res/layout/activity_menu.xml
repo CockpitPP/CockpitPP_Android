@@ -337,17 +337,4 @@
         android:textSize="16sp"
         android:textColor="@color/menuButtonTextColor" />
 
-    <TextView
-        android:id="@+id/beta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subTitle"
-        android:layout_toRightOf="@id/scrollLayout"
-        android:layout_toEndOf="@id/scrollLayout"
-        android:gravity="center"
-        android:text="@string/beta"
-        android:textAppearance="@style/PagerTabStripText"
-        android:textSize="14sp"
-        android:textColor="@color/menuButtonTextColor" />
-
 </RelativeLayout>
