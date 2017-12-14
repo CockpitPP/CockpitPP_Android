@@ -97,7 +97,7 @@
     <string name="changelog_1">05&#8211;29&#8211;2017:\n• PCA for Mirage 2000C by Razbam\n• PPA for Mirage 2000C by Razbam\n• RWR for F-15C by ED\n</string>
     <string name="changelog_2">09&#8211;14&#8211;2017:\n• INS for Mirage 2000C by Razbam\n• INS Knobs for Mirage 2000C by Razbam\n• Armament Panel for the Huey by BelSimTek\n</string>
     <string name="changelog_3">11&#8211;16&#8211;2017:\n• Better stability for Android 7 users\n• Fix bug of freeze after ejection\n• User can\'t anymore enter text in ports\n• Added explanations in the installation guide\n</string>
-    <string name="changelog_4">15&#8211;15&#8211;2017:\n• Nozzle for AV-8B n/a Harrier by Razbam\n• Tablet mod to have several panels\n• The application is now open-sourced! (documentation will come soon)\n• Discord server open for anyone who needs help\n</string>
+    <string name="changelog_4">15&#8211;15&#8211;2017:\n• Nozzle for AV-8B n/a Harrier by Razbam\n• Tablet mod to have several panels\n• The application is now open-sourced! (documentation will come soon)\n• Discord server opened for anyone\n</string>
 
     <!-- FAQ -->
     <string name="faq">Frequently Asked Question</string>
