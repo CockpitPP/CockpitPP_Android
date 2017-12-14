@@ -124,6 +124,15 @@
             android:clickable="true"
             android:text="@string/about_github"/>
 
+        <ImageView
+            android:id="@+id/discord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/discord"
+            android:contentDescription="@null"/>
+
         <Button
             android:id="@+id/changelog"
             android:layout_width="wrap_content"

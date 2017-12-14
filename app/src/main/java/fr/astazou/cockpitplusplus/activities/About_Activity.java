@@ -1,14 +1,17 @@
 package fr.astazou.cockpitplusplus.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import fr.astazou.cockpitplusplus.R;
@@ -62,6 +65,17 @@ public class About_Activity extends Module_Activity {
                         })
                         .setIcon(R.mipmap.mirage_icon)
                         .show();
+            }
+        });
+
+        //Bind the Discord button
+        ImageView discord = (ImageView) findViewById(R.id.discord);
+        discord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uriUrl = Uri.parse(getString(R.string.discord_contribute));
+                Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+                startActivity(launchBrowser);
             }
         });
     }

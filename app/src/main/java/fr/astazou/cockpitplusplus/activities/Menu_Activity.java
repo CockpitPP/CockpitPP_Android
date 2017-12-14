@@ -151,14 +151,6 @@ public class Menu_Activity extends Activity {
         mirage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
-                Intent intent;
-                if(isTablet()) {
-                    intent = new Intent(Menu_Activity.this, M2kC_Activity_Tablet.class);
-                } else {
-                    intent = new Intent(Menu_Activity.this, M2kC_Activity.class);
-                }
-                startActivity(intent);*/
                 // custom dialog
                 final Dialog dialog = new Dialog(Menu_Activity.this);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -410,20 +402,11 @@ public class Menu_Activity extends Activity {
         Toast.makeText(this,stringId,Toast.LENGTH_SHORT).show();
     }
 
-    private boolean isTablet() {
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
-        float yInches= metrics.heightPixels/metrics.ydpi;
-        float xInches= metrics.widthPixels/metrics.xdpi;
-        double diagonalInches = Math.sqrt(xInches*xInches + yInches*yInches);
-        if (diagonalInches>=6.5){
-            return true;
-        } else{
-            return false;
-        }
-    }
-
+    /**
+     * Use to call activity from Dialog
+     * @param pActivity
+     */
     public void startActivity(Class pActivity) {
         startActivity(new Intent(Menu_Activity.this, pActivity));
     }

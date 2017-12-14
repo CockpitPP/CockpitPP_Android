@@ -74,7 +74,12 @@
     <string name="not_working_step6">6) Did you activate your wifi/wireless on your Android?</string>
     <string name="not_working_step7">7) If you have doubts about your Cockpit.lua configuration because default <b><i>Notepad</i></b> in your Windows isn\'t clear enough for you, I suggest you to use <b><i>Notepad++</i></b> instead of the basic <b><i>Notepad</i></b>,then the script will be easier to read, and you will see difference between the executed code and the commented lines (for explanations)</string>
     <string name="not_working_step8">8) If the app shows the data from the game but you can\'t send actions to DCS, it means you made a mistake in the Android app</string>
-    <string name="not_working_step9">9) If you can send actions to DCS but the app doesn\'t show the data on the panel in the app , it means you made a mistake in the Cockpit+.lua</string>
+    <string name="not_working_step9">9) If you can send actions to DCS but the app doesn\'t show the data on the panel in the app , it means you made a mistake in the Cockpit++.lua</string>
+    <string name="not_working_step10">10) Join us on our Discord server to help you to install the application: </string>
+
+    <!-- Contribute -->
+    <string name="discord_not_working">https://discord.gg/KbE72PP</string>
+    <string name="discord_contribute">https://discord.gg/MbGUthb</string>
 
     <!-- About -->
     <string name="about_by_who">By <i><b>Astazou</b></i>, <i>Simon CHEVALIER</i></string>
@@ -85,14 +90,14 @@
     <string name="about_thanks_Huertix">Special thanks to <b><i>Huertix</i></b>, his app for the <b><i>A-10C Warthog</i></b> motivated me to developp Cockpit++, here is his app <a href="https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta">https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta</a> </string>
     <string name="about_contributors">Also special thanks to contributors of this project:\n- **Your nickname if you contribute :D** </string>
     <!-- \n- <b><i>K4ngoo</i></b> for the radio panel of the M2kC! <a href="https://github.com/AlexFaraino/">https://github.com/AlexFaraino/</a>  -->
-    <string name="about_github">Do you want to take part of the project? Feel free to contribute here <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> </string>
+    <string name="about_github">Do you want to take part of the project? Feel free to contribute here <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> or come talk with us on our Discord server: </string>
 
     <!-- ChangeLog -->
     <string name="changelog">ChangeLog</string>
     <string name="changelog_1">05&#8211;29&#8211;2017:\n• PCA for Mirage 2000C by Razbam\n• PPA for Mirage 2000C by Razbam\n• RWR for F-15C by ED\n</string>
     <string name="changelog_2">09&#8211;14&#8211;2017:\n• INS for Mirage 2000C by Razbam\n• INS Knobs for Mirage 2000C by Razbam\n• Armament Panel for the Huey by BelSimTek\n</string>
     <string name="changelog_3">11&#8211;16&#8211;2017:\n• Better stability for Android 7 users\n• Fix bug of freeze after ejection\n• User can\'t anymore enter text in ports\n• Added explanations in the installation guide\n</string>
-    <string name="changelog_4">15&#8211;15&#8211;2017:\n• Nozzle for AV-8B n/a Harrier by Razbam\n• Tablet mod to have several panels\n• The application is now open-sourced! (documentation will come soon)\n</string>
+    <string name="changelog_4">15&#8211;15&#8211;2017:\n• Nozzle for AV-8B n/a Harrier by Razbam\n• Tablet mod to have several panels\n• The application is now open-sourced! (documentation will come soon)\n• Discord server open for anyone who needs help\n</string>
 
     <!-- FAQ -->
     <string name="faq">Frequently Asked Question</string>
@@ -103,9 +108,9 @@
     <string name="faq_ios_plan"><b>- Any iOS plans?</b>\nFrom me, no, not for now, for one main reason: I would have to buy a mac, an ipad and Apple dev\' licence. But my code will be shared, we can imagine the .LUA code can be used by someone who wants to develop the iOS version ;)</string>
     <string name="faq_multi_device"><b>- Can I use several devices?</b>\nYes, just set properly the .lua file with Androids IP</string>
     <string name="faq_how_it_works"><b>- How it works?</b>\nDCS provides lua access to interact with the game, so I made a lua file to communicate by UDP with android devices using the wifi</string>
-    <string name="faq_contribute"><b>- I want to contribute and make a panel, how can I do?</b>\nCome on the project\'s GitHub and contribute: <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a></string>
+    <string name="faq_contribute"><b>- I want to contribute and make a panel (or translate app in my language, or do test, or contribute as you want), how can I do?</b>\nCome on the project\'s GitHub and contribute: <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> or come talk with us on our Discord server: </string>
     <string name="faq_not_working"><b>- My app is not working, what can I do?</b>\nRefer to the \"Guide\" on the menu, properly check every steps and if the problems are still here, check the page \"Not working?\" on the menu</string>
-    <string name="faq_found_a_bug"><b>- I found a bug, what can I do to report it?</b>\n(Wait the project to be on GitHub first) then you can open a ticket</string>
+    <string name="faq_found_a_bug"><b>- I found a bug, what can I do to report it?</b>\n Open a ticket on GitHub, or tell us on our Discord ;)</string>
 
     <!-- Mirage 2000C -->
     <string name="m2kc">M-2000C</string>
