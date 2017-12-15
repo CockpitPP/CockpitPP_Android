@@ -47,6 +47,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/menu_choose_tablet"
                 android:textColor="@color/menuTextColor"
+                android:paddingRight="4dp"
+                android:paddingEnd="4dp"
                 fontPath="fonts/hemi_head_bd_it.ttf"
                 android:textSize="18sp"/>
         </LinearLayout>
@@ -74,6 +76,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/menu_choose_smartphone"
                 android:textColor="@color/menuTextColor"
+                android:paddingRight="4dp"
+                android:paddingEnd="4dp"
                 fontPath="fonts/hemi_head_bd_it.ttf"
                 android:textSize="18sp"/>
         </LinearLayout>
