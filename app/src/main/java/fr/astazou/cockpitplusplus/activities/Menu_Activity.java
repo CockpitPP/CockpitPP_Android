@@ -72,7 +72,8 @@ public class Menu_Activity extends Activity {
         a10c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast(R.string.not_available);
+                Intent intent = new Intent(Menu_Activity.this, A10C_Activity.class);
+                startActivity(intent);
             }
         });
         ajs37.setOnClickListener(new View.OnClickListener() {

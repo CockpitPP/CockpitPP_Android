@@ -112,6 +112,11 @@
     <string name="faq_not_working"><b>- My app is not working, what can I do?</b>\nRefer to the \"Guide\" on the menu, properly check every steps and if the problems are still here, check the page \"Not working?\" on the menu</string>
     <string name="faq_found_a_bug"><b>- I found a bug, what can I do to report it?</b>\n Open a ticket on GitHub, or tell us on our Discord ;)</string>
 
+
+    <!-- A-10C -->
+    <string name="a10c">A-10C</string>
+    <string name="a10c_vii">VVI</string>
+
     <!-- Mirage 2000C -->
     <string name="m2kc">M-2000C</string>
     <string name="m2kc_pca">PCA</string>
@@ -122,7 +127,7 @@
     <string name="m2kc_mis">MIS</string>
 
     <!-- F-15C Eagle -->
-    <string name="f15c" >F-15C</string>
+    <string name="f15c">F-15C</string>
     <string name="f15c_rwr">RWR</string>
 
     <!-- UH-1H Huey -->
@@ -170,4 +175,7 @@
     <string name="PREFERENCES_ANDROIDPORT" translatable="false">PREFERENCES_ANDROIDPORT</string>
     <string name="PREFERENCES_ANDROIDPORT_default_value" translatable="false">14800</string>
     <string name="PREFERENCES_CONNECTED" translatable="false">PREFERENCES_CONNECTED</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

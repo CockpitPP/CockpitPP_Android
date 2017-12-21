@@ -161,6 +161,16 @@ function LuaExportAfterNextFrame()
 			
 			msgOut = HEAD_MSG ..",".. currentAircraft .. ","
 
+            if currentAircraft == "A-10C" then
+     				local MainPanel = GetDevice(0)
+					--return GetDevice(0):get_argument_value(12)
+					--return list_indication(6)
+     				vvi = MainPanel:get_argument_value(12)
+     				msgOut = msgOut ..",".. vvi .. " \n"
+					--msgOut(1) header
+					--msgOut(2) aircraft identifier
+					--msgOut(3) vvi
+     		end
 			if currentAircraft == "M-2000C" then
 				local MainPanel = GetDevice(0)
 
