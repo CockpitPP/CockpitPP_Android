@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -24,6 +26,9 @@ public class A10C_VVI_View extends View {
     private final static int POINT_RADIUS = 8;
     private final static int CROSS_LENGTH = 42;
     private final static int CROSS_WIDTH = 4;
+    //private static Bitmap mVVIBackgroudBitMap = null;
+    private Bitmap mVVINeedleBitmap = null;
+    Matrix mMatrix = new Matrix();
 
     private String mData;
 
@@ -57,6 +62,7 @@ public class A10C_VVI_View extends View {
      */
     public A10C_VVI_View(Context context) {
         super(context);
+        mVVINeedleBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a10c_vvi_needle);
     }
 
     public void updateLayoutSize() {
@@ -67,17 +73,24 @@ public class A10C_VVI_View extends View {
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
         Log.d(TAG, "onDraw: 1");
-        float posX = (float) canvas.getHeight();
-        float posY = (float) canvas.getWidth();
-        //Show the spot(s)
-        //if(mData!=null && !mData.isEmpty()) {
-          //  String[] spots = mData.split(";");
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a10c_vvi_needle);
-            canvas.rotate(45, posX, posY);
-            canvas.drawBitmap(bitmap, posX, posY, null);
-            //canvas.restore();
-            canvas.save();
-        //}
+        float imageCenterX = (float) canvas.getHeight()/2f;
+        float imageCenterY = (float) canvas.getWidth()/2f;
+
+
+        Log.d(TAG, "canvas.getHeight() " + canvas.getHeight());
+        Log.d(TAG, "canvas.getWidth() " + canvas.getWidth());
+        Log.d(TAG, "mNeedleBitmap.getWidth() " + mVVINeedleBitmap.getWidth());
+
+        Log.d(TAG, "(225/1020) " + (225f/1020f));
+        float finalWidth = (225f/500f) * canvas.getWidth();
+        Log.d(TAG, "finalWidth " + finalWidth);
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(mVVINeedleBitmap, (int) finalWidth , 60, true);
+
+
+        canvas.save();
+        canvas.rotate(15, imageCenterX, imageCenterY);
+        canvas.drawBitmap(scaledBitmap, imageCenterX,imageCenterY,null);
+        canvas.restore();
         Log.d(TAG, "onDraw: 2");
     }
 

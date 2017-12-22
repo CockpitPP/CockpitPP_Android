@@ -5,23 +5,8 @@ android:layout_height="match_parent"
 tools:ignore="MissingPrefix"
 tools:context="fr.astazou.cockpitplusplus.fragments.A10C_VVI">
 
-    <LinearLayout
-        android:background="@android:color/black"
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:weightSum="4">
-        <RelativeLayout
-            android:id="@+id/screen"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </RelativeLayout>
-    </LinearLayout>
     <ImageView
-        android:id="@+id/imageViewGauge"
+        android:id="@+id/layoutImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -29,4 +14,37 @@ tools:context="fr.astazou.cockpitplusplus.fragments.A10C_VVI">
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:contentDescription="@null"/>
+
+    <LinearLayout
+        android:id="@+id/containerLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.9"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4.3"/>
+
+            <RelativeLayout
+                android:id="@+id/screenRelativeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="15.3">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

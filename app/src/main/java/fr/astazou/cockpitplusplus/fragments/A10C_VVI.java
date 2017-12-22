@@ -74,39 +74,12 @@ public class A10C_VVI extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d("asd","onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_a10_c__vvi, container, false);
-        mBackgroundImageView = (ImageView) rootView.findViewById(R.id.imageViewGaugeVVI);
-        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.container);
-        mScreenRelativeLayout = (RelativeLayout) rootView.findViewById(R.id.screen);
+
+        mBackgroundImageView = (ImageView) rootView.findViewById(R.id.layoutImageView);
+        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.containerLinearLayout);
+        mScreenRelativeLayout = (RelativeLayout) rootView.findViewById(R.id.screenRelativeLayout);
         mA10CVVI_view = new A10C_VVI_View(getActivity());
         mScreenRelativeLayout.addView(mA10CVVI_view);
-        if(mBackgroundImageView == null){
-            Log.d(TAG, "mBackgroundImageView IS NULL");
-        }
-        if(mContainerLinearLayout == null){
-            Log.d(TAG, "mContainerLinearLayout IS NULL");
-        }
-        if(mScreenRelativeLayout == null){
-            Log.d(TAG, "mScreenRelativeLayout IS NULL");
-        }
-        /*
-        <RelativeLayout
-        android:id="@+id/screen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-            <ImageView
-        android:id="@+id/imageViewGaugeVVI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:src="@drawable/a10c_vvi_background"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:contentDescription="@null"/>
-        </RelativeLayout>*/
-
-        /*
-    */
         return rootView;
     }
 
@@ -134,7 +107,6 @@ public class A10C_VVI extends Fragment {
      * background image. Very important for the rotations
      */
     private void resizeView() {
-
         mBackgroundImageView.getViewTreeObserver().addOnGlobalLayoutListener(
                 new ViewTreeObserver.OnGlobalLayoutListener() {
                     @SuppressLint("NewApi")
