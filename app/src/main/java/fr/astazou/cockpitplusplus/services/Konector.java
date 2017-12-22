@@ -126,6 +126,8 @@ public class Konector extends Service {
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.UH1H_ARMAMENT).putExtra(BroadcastKeys.UH1H_ARMAMENT,messageArray[3]));
                                 } else if (messageArray[2].equals(getString(R.string.av8bna)) && messageArray.length > 3) {
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.AV8BNA_NOZZLE).putExtra(BroadcastKeys.AV8BNA_NOZZLE,messageArray[3]));
+                                } else if (messageArray[2].equals(getString(R.string.a10c)) && messageArray.length > 2) {
+                                    sendBroadcast(new Intent().setAction(BroadcastKeys.A10C_VVI).putExtra(BroadcastKeys.A10C_VVI,messageArray[2]));
                                 }
                             } else if(Integer.valueOf(MyApp.LUA_VERSION) > Integer.valueOf(messageArray[1])){
                                 //Log.w(LOGGER, "Oh oh, the LUA is not up to date");

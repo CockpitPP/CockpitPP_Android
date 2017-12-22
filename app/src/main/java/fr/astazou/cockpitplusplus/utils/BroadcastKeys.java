@@ -12,6 +12,9 @@ public class BroadcastKeys {
     public static final String OPEN_PLAYSTORE = "open_playstore";
     public static final String UPDATE_LUA = "update_lua";
 
+    /** Broadcast keys for the A-10C **/
+    public static final String A10C_VVI = "A10C_vvi";
+
     /** Broadcast keys for the Mirage 2000C **/
     public static final String M2KC_UR = "M2KC_ur";
     public static final String M2KC_BR = "M2KC_br";
