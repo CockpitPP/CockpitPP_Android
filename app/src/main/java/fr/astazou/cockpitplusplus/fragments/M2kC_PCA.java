@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import fr.astazou.cockpitplusplus.MyApp;
 import fr.astazou.cockpitplusplus.R;
 import fr.astazou.cockpitplusplus.utils.BroadcastKeys;
 import fr.astazou.cockpitplusplus.utils.M2KC_Commands;
@@ -152,12 +150,12 @@ public class M2kC_PCA extends Fragment {
                 String pcabtn = intent.getExtras().getString(BroadcastKeys.M2KC_PCABTN);
                 //Log.d("pcabtn",pcabtn);
                 String btn[] = pcabtn.split(";");
-                if(btn[0].contains("1")) {
-                    mMasterArmUp.setVisibility(View.VISIBLE);
-                    mMasterArmDown.setVisibility(View.GONE);
-                } else {
+                if(btn[0].contains("-1") || btn[0].contains("0")) {
                     mMasterArmDown.setVisibility(View.VISIBLE);
                     mMasterArmUp.setVisibility(View.GONE);
+                } else {
+                    mMasterArmUp.setVisibility(View.VISIBLE);
+                    mMasterArmDown.setVisibility(View.GONE);
                 }
                 if(btn[2].contains("1")) {
                     mJetti1.setVisibility(View.GONE);
