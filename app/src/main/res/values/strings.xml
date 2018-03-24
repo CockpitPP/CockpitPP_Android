@@ -56,8 +56,8 @@
     <string name="guide_step5">5) Open the <b>Cockpit++.lua</b> and add the IP address of your Android phone (You will find the Android IP in the Cockpit++ application, in "settings", you must be connected by wifi on the same network than your computer)</string>
     <string name="guide_step5Example1">For example, if you Android IP is <b>192.168.0.12</b>, you must write:</string>
     <string name="guide_step5Example2">Of course you can use several Android devices in the same time, just add other Android IP if you want to use Cockpit++ with more than 1 device:</string>
-    <string name="guide_step6">6) In the app, go to Settings, add your computer\'s IP and the two ports which are in the <b>Cockpit++.lua</b>\nYou will get your computer\'s IP by doing:\n - Windows touch + \"R\"\n - typing \"cmd\" and pressing \"enter\"\n - typing \"ipconfig\" in the console\n - get your ipv4 address</string>
-    <string name="guide_step7">7) Now it should work :)</string>
+    <string name="guide_step6">6) In the app, go to Settings, add your computer\'s IP \nYou will get your computer\'s IP by doing:\n - Windows touch + \"R\"\n - typing \"cmd\" and pressing \"enter\"\n - typing \"ipconfig\" in the console\n - get your ipv4 address \nBy default ports are configured even if these seem empty, but you can manage them, just be sure you are using the same ports in you app and <b>Cockpit++.lua</b></string>
+    <string name="guide_step7">7) Now <u>start a mission, remove the pause, startup your plane</u> and it should work :)</string>
     <string name="guide_step8">8) Not working? check the previous steps and/or restart the app</string>
     <string name="guide_step9">9) Still not working? Then go in <b><u><i>Not working?</i></u></b> in the app, you will have some ideas of possible problems with the solution </string>
     <string name="guide_stepTrick"><b>Trick</b>: the LUA files must be saved <u>before</u> you launch DCS</string>
@@ -75,7 +75,8 @@
     <string name="not_working_step7">7) If you have doubts about your Cockpit.lua configuration because default <b><i>Notepad</i></b> in your Windows isn\'t clear enough for you, I suggest you to use <b><i>Notepad++</i></b> instead of the basic <b><i>Notepad</i></b>,then the script will be easier to read, and you will see difference between the executed code and the commented lines (for explanations)</string>
     <string name="not_working_step8">8) If the app shows the data from the game but you can\'t send actions to DCS, it means you made a mistake in the Android app</string>
     <string name="not_working_step9">9) If you can send actions to DCS but the app doesn\'t show the data on the panel in the app , it means you made a mistake in the Cockpit++.lua</string>
-    <string name="not_working_step10">10) Join us on our Discord server to help you to install the application: </string>
+    <string name="not_working_step10">10) Be sure you are <u>not</u> in the menu, the connection will work only if you are in running game (with no pause)</string>
+    <string name="not_working_step11">11) Join us on our Discord server to help you to install the application: </string>
 
     <!-- Contribute -->
     <string name="discord_not_working">https://discord.gg/KbE72PP</string>
@@ -102,7 +103,6 @@
     <!-- FAQ -->
     <string name="faq">Frequently Asked Question</string>
     <string name="faq_other_module"><b>- Do you plan to do more panels and/or more modules?</b>\nI want it! Even if the app was initially done only for the PCA and the PPA of the Mirage 2000C, I made the app to work with other panels/modules, I will probably do other panels (not only for the Mirage 2000C), I also have to own other modules</string>
-    <string name="faq_dcs_version"><b>- Is it for DCS 1.5 or DCS 2.2?</b>\nFor both of them ;)</string>
     <string name="faq_drain_battery"><b>- I noticed tha app drains the battery, is it normal?</b>\nYes, the app is communicating a lot with the computer using UDP protocol, it needs energy</string>
     <string name="faq_name"><b>- Why \"Cockpit++\"?</b>\nBecause the app \'extends\' your cockpit :)</string>
     <string name="faq_ios_plan"><b>- Any iOS plans?</b>\nFrom me, no, not for now, for one main reason: I would have to buy a mac, an ipad and Apple dev\' licence. But my code will be shared, we can imagine the .LUA code can be used by someone who wants to develop the iOS version ;)</string>
@@ -113,7 +113,7 @@
     <string name="faq_found_a_bug"><b>- I found a bug, what can I do to report it?</b>\n Open a ticket on GitHub, or tell us on our Discord ;)</string>
 
     <!-- Mirage 2000C -->
-    <string name="m2kc">M-2000C</string>
+    <string name="m2kc" translatable="false">M-2000C</string>
     <string name="m2kc_pca">PCA</string>
     <string name="m2kc_ppa">PPA</string>
     <string name="m2kc_rwr">RWR</string>
@@ -122,15 +122,15 @@
     <string name="m2kc_mis">MIS</string>
 
     <!-- F-15C Eagle -->
-    <string name="f15c" >F-15C</string>
+    <string name="f15c" translatable="false">F-15C</string>
     <string name="f15c_rwr">RWR</string>
 
     <!-- UH-1H Huey -->
-    <string name="uh1h">UH-1H</string>
+    <string name="uh1h" translatable="false">UH-1H</string>
     <string name="uh1h_armament">Armament</string>
 
     <!-- AV-8B n/a Harrier -->
-    <string name="av8bna">AV8BNA</string>
+    <string name="av8bna" translatable="false">AV8BNA</string>
     <string name="av8bna_nozzle">Nozzle</string>
 
     <!-- Sandbox -->
