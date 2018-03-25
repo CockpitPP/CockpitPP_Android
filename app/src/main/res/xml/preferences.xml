@@ -16,12 +16,16 @@
         <EditTextPreference
             android:key="@string/PREFERENCES_DCSPORT"
             android:inputType="number"
+            android:digits="0123456789"
+            android:maxLength="5"
             android:title="@string/dcsHostPort"
             android:maxLines="1"
             />
         <EditTextPreference
             android:key="@string/PREFERENCES_ANDROIDPORT"
             android:inputType="number"
+            android:digits="0123456789"
+            android:maxLength="5"
             android:title="@string/android_port"
             android:maxLines="1"
             />

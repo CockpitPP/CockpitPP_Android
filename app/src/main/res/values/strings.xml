@@ -158,8 +158,8 @@
     <string name="noIP">0.0.0.0</string>
     <string name="needWifi">Please, connect to your wifi first</string>
     <string name="exIpAddress">ex: 192.168.0.11</string>
-    <string name="exDCSPort">ex: 14801</string>
-    <string name="exAndroidPort">ex: 14800</string>
+    <string name="exDCSPort">ex: 14801, or leave empty</string>
+    <string name="exAndroidPort">ex: 14800, or leave empty</string>
     <!-- DO NOT TOUCH/TRANSLATE THIS SECTION -->
     <string name="PREFERENCES_ANDROID_APP_VERSION" translatable="false">PREFERENCES_ANDROID_APP_VERSION</string>
     <string name="PREFERENCES_ANDROID_IPADDRESS" translatable="false">PREFERENCES_ANDROID_IPADDRESS</string>
