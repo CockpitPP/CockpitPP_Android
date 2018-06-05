@@ -123,6 +123,16 @@ public class Konector extends Service {
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.UH1H_ARMAMENT).putExtra(BroadcastKeys.UH1H_ARMAMENT,messageArray[3]));
                                 } else if (messageArray[2].equals(getString(R.string.av8bna)) && messageArray.length > 3) {
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.AV8BNA_NOZZLE).putExtra(BroadcastKeys.AV8BNA_NOZZLE,messageArray[3]));
+                                }  else if (messageArray[2].equals(getString(R.string.a10c)) && messageArray.length > 3) {
+                                    /*
+                                        D/UDP: Received: 'Cockpit++,3,A-10C,0.06150071695447'
+                                        D/KonectorTAG: [0] Cockpit++
+                                        D/KonectorTAG: [1] 3
+                                        D/KonectorTAG: [2] A-10C
+                                        D/KonectorTAG: [3] 0.06150071695447
+                                    * */
+                                    sendBroadcast(new Intent().setAction(BroadcastKeys.A10C_VVI).putExtra(BroadcastKeys.A10C_VVI,messageArray[3]));
+                                    //Log.d(TAG, "SENDING A10C VVI Broadcast" + messageArray[3]);
                                 }
                             } else if(Integer.valueOf(MyApp.LUA_VERSION) > Integer.valueOf(messageArray[1])){
                                 //Log.w(LOGGER, "Oh oh, the LUA is not up to date");
