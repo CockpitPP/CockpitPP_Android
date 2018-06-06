@@ -57,10 +57,10 @@ public class A10C_VVI extends Fragment {
             //Log.d(TAG, "onReceive: !!!!!");
             if(intent.getAction().contains(BroadcastKeys.A10C_VVI)) {
                 String vvi = intent.getExtras().getString(BroadcastKeys.A10C_VVI);
-                Log.d(TAG, "vvi -> " + vvi);
+                //Log.d(TAG, "vvi -> " + vvi);
                 if(vvi != null && !vvi.isEmpty()){
                     mA10CVVI_view.setData(vvi);
-                    Log.d(TAG, "onReceive: !!!!!");
+                    //Log.d(TAG, "onReceive: !!!!!");
                 }
             }
         }

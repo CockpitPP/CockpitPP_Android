@@ -29,8 +29,11 @@ public class A10C_VVI_View extends AppCompatImageView {
     private final static int CROSS_WIDTH = 4;
     private Bitmap mLastBitmap = null;
     private Bitmap mVVINeedleBitmap = null;
+    private Bitmap mScaledVVINeedleBitmap = null;
     private Bitmap mVVIBackgroundBitmap = null;
-    Matrix mMatrix = new Matrix();
+    private Matrix mMatrix = new Matrix();
+    private float mFinalWidth = -1;
+
     //private int mAngle = 0;
 
     private String mData = "0.05";
@@ -44,6 +47,7 @@ public class A10C_VVI_View extends AppCompatImageView {
     }
 
     public void updateLayoutSize() {
+
         invalidate();
     }
 
@@ -73,27 +77,31 @@ public class A10C_VVI_View extends AppCompatImageView {
             //portrait
             finalWidth = canvas.getWidth() / 4;
         }
+        if(finalWidth != mFinalWidth || mScaledVVINeedleBitmap == null){
+            mScaledVVINeedleBitmap = ScaleNeedleBitmap(finalWidth);
+        }
         //Log.d(TAG, "finalWidth " + finalWidth);
         //Log.d(TAG, "finalWidth " + finalWidth);
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(mVVINeedleBitmap, (int) finalWidth , 50, true);
 
-
-        Matrix matrix = new Matrix();
-        matrix.reset();
-        float px = imageCenterX;
-        float py = imageCenterY;
-        matrix.postTranslate(-scaledBitmap.getWidth(), -scaledBitmap.getHeight()/2);
-        matrix.postRotate(angle);
-        matrix.postTranslate(px, py);
-        canvas.drawBitmap(scaledBitmap, matrix, null);
+        mMatrix.reset();
+        mMatrix.postTranslate(-mScaledVVINeedleBitmap.getWidth(), -mScaledVVINeedleBitmap.getHeight()/2);
+        mMatrix.postRotate(angle);
+        mMatrix.postTranslate(imageCenterX, imageCenterY);
+        canvas.drawBitmap(mScaledVVINeedleBitmap, mMatrix, null);
 
         //Log.d(TAG, "onDraw: VVI 2");
     }
 
+    private Bitmap ScaleNeedleBitmap(float finalWidth){
+        //Log.d("SCALING","SCALING BITMAP");
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(mVVINeedleBitmap, (int) finalWidth , 50, true);
+        mFinalWidth = finalWidth;
+        return scaledBitmap;
+    }
 
     public void setData(String pData) {
         mData = pData;
-        Log.d(TAG, "setData(String pData)");
+        //Log.d(TAG, "setData(String pData)");
         invalidate();
     }
 }
