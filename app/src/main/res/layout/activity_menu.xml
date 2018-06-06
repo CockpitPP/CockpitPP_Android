@@ -26,7 +26,7 @@
                 android:id="@+id/a10c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/menuButtonDisabledTextColor"
+                android:textColor="@color/menuButtonTextColor"
                 android:gravity="start|center_vertical"
                 android:scaleType="fitCenter"
                 android:padding="6dp"
