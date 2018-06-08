@@ -66,7 +66,7 @@ public class A10C_HSI extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().registerReceiver(this.mBroadCastNewMessage, new IntentFilter(BroadcastKeys.A10C_VVI));
+        getActivity().registerReceiver(this.mBroadCastNewMessage, new IntentFilter(BroadcastKeys.A10C_HSI));
     }
 
     /**
@@ -77,7 +77,7 @@ public class A10C_HSI extends Fragment {
         Log.d("asd","onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_a10_c__vvi, container, false);
 
-        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.containerLinearLayout);
+        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.a10_hsi_compasscard_layout);
         mA10CHSI_view = new A10C_HSI_View(getActivity());
         mContainerLinearLayout.addView(mA10CHSI_view);
         return rootView;

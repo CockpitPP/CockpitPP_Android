@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -39,10 +40,13 @@ import static fr.astazou.cockpitplusplus.services.Konector.TAG;
 public class A10C_VVI extends Fragment {
     //The background image of the panel, every view element (textview, buttons, images, ...) must
     //be properly resized according to this image
-    //private ImageView mImageViewGaugeVVI;
+    private ImageView mBackgroundImageView;
 
     //The container of every view elements which must properly takes the size of the background
-    private LinearLayout mContainerLinearLayout;
+    private LinearLayout mA10VVIContainer;
+
+    //The layout where we add the custom_view
+    private RelativeLayout mA10VVIGaugeContainerLayout;
 
     //View for the VVI
     private A10C_VVI_View mA10CVVI_view;
@@ -89,10 +93,12 @@ public class A10C_VVI extends Fragment {
         Log.d("asd","onCreateView mA10CVVI_view");
         View rootView = inflater.inflate(R.layout.fragment_a10_c__vvi, container, false);
 
-        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.containerLinearLayout);
-        mA10CVVI_view = new A10C_VVI_View(getActivity());
+        mBackgroundImageView = (ImageView) rootView.findViewById(R.id.a10_vvi_background);
+        mA10VVIContainer = (LinearLayout) rootView.findViewById(R.id.a10_vvi_container);
+        mA10VVIGaugeContainerLayout = (RelativeLayout) rootView.findViewById(R.id.a10_vvi_gauge_screen_layout);
 
-        mContainerLinearLayout.addView(mA10CVVI_view);
+        mA10CVVI_view = new A10C_VVI_View(getActivity());
+        mA10VVIGaugeContainerLayout.addView(mA10CVVI_view);
         return rootView;
     }
 
@@ -120,7 +126,7 @@ public class A10C_VVI extends Fragment {
      * background image. Very important for the rotations
      */
     private void resizeView() {
-        /*mBackgroundImageView.getViewTreeObserver().addOnGlobalLayoutListener(
+        mBackgroundImageView.getViewTreeObserver().addOnGlobalLayoutListener(
                 new ViewTreeObserver.OnGlobalLayoutListener() {
                     @SuppressLint("NewApi")
                     @SuppressWarnings("deprecation")
@@ -133,12 +139,11 @@ public class A10C_VVI extends Fragment {
                         }
                         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(mBackgroundImageView.getLayoutParams().width, mBackgroundImageView.getLayoutParams().height);
                         layoutParams.gravity = CENTER;
-
+                        mA10VVIContainer.setLayoutParams(layoutParams);
+                        mA10VVIContainer.getLayoutParams().height = mBackgroundImageView.getHeight();
+                        mA10VVIContainer.getLayoutParams().width = mBackgroundImageView.getWidth();
                     }
-                });*/
-        /*mContainerLinearLayout.setLayoutParams(layoutParams);
-                        mContainerLinearLayout.getLayoutParams().height = mBackgroundImageView.getHeight();
-                        mContainerLinearLayout.getLayoutParams().width = mBackgroundImageView.getWidth();*/
+                });
     }
 
     /**

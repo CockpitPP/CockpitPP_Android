@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
 import android.support.v7.widget.AppCompatImageView;
+import android.view.ViewGroup;
 
 import fr.astazou.cockpitplusplus.R;
 
@@ -23,18 +24,11 @@ import static fr.astazou.cockpitplusplus.services.Konector.TAG;
 
 public class A10C_VVI_View extends AppCompatImageView {
 
-
-    private final static int POINT_RADIUS = 8;
-    private final static int CROSS_LENGTH = 42;
-    private final static int CROSS_WIDTH = 4;
-    private Bitmap mLastBitmap = null;
     private Bitmap mVVINeedleBitmap = null;
     private Bitmap mScaledVVINeedleBitmap = null;
-    private Bitmap mVVIBackgroundBitmap = null;
+    //private Bitmap mVVIBackgroundBitmap = null;
     private Matrix mMatrix = new Matrix();
     private float mFinalWidth = -1;
-
-    //private int mAngle = 0;
 
     private String mData = "0.05";
 
@@ -42,15 +36,15 @@ public class A10C_VVI_View extends AppCompatImageView {
     public A10C_VVI_View(Context context) {
         super(context);
         mVVINeedleBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a10c_vvi_needle);
-        mVVIBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a10c_vvi_background);
-        setImageBitmap(mVVIBackgroundBitmap);
+        //mVVIBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a10c_vvi_background);
     }
 
-    public void updateLayoutSize() {
-
-        invalidate();
+    protected void onMeasure (int widthMeasureSpec, int heightMeasureSpec)
+    {
+        this.setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
     }
 
+    public void updateLayoutSize() {invalidate();}
 
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
@@ -72,10 +66,10 @@ public class A10C_VVI_View extends AppCompatImageView {
         Log.d(TAG, "mNeedleBitmap.getWidth() " + mVVINeedleBitmap.getWidth());*/
         if(canvas.getWidth() > canvas.getHeight()){
             //landscape
-            finalWidth = canvas.getHeight() / 3;
+            finalWidth = Math.round(canvas.getHeight() / 1.9);
         }else {
             //portrait
-            finalWidth = canvas.getWidth() / 4;
+            finalWidth = Math.round(canvas.getWidth() / 1.9);
         }
         if(finalWidth != mFinalWidth || mScaledVVINeedleBitmap == null){
             mScaledVVINeedleBitmap = ScaleNeedleBitmap(finalWidth);
