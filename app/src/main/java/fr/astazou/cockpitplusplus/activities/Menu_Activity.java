@@ -69,12 +69,6 @@ public class Menu_Activity extends Activity {
         Button exit = (Button) findViewById(R.id.exit);
 
         //Set the actions on the buttons
-        a10c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast(R.string.not_available);
-            }
-        });
         ajs37.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -176,6 +170,13 @@ public class Menu_Activity extends Activity {
                 });
 
                 dialog.show();
+            }
+        });
+        a10c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu_Activity.this, A10C_Activity.class);
+                startActivity(intent);
             }
         });
         huey.setOnClickListener(new View.OnClickListener() {
