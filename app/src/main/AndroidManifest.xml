@@ -23,6 +23,11 @@
         </activity>
 
         <activity
+            android:name="fr.astazou.cockpitplusplus.activities.A10C_Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppThemeM2kC" />
+
+        <activity
             android:name="fr.astazou.cockpitplusplus.activities.M2kC_Activity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppThemeM2kC" />
