@@ -113,6 +113,10 @@ public class Module_Activity extends FragmentActivity {
                 Toast.makeText(this, getString(R.string.wrong_module_1) + " " + pWrongModule + getString(R.string.wrong_module_2bis) ,Toast.LENGTH_LONG).show();
                 startActivity(new Intent(Module_Activity.this, AV8BNA_Activity.class));
                 break;
+            case "A-10C":
+                Toast.makeText(this, getString(R.string.wrong_module_1) + " " + pWrongModule + getString(R.string.wrong_module_2bis) ,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Module_Activity.this, A10C_Activity.class));
+                break;
             default:
                 Toast.makeText(this, getString(R.string.wrong_module_1) + " " + pWrongModule + getString(R.string.wrong_module_2) ,Toast.LENGTH_LONG).show();
                 break;
