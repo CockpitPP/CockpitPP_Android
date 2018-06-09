@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 
 import fr.astazou.cockpitplusplus.R;
 import fr.astazou.cockpitplusplus.custom_views.A10C_HSI_View;
-import fr.astazou.cockpitplusplus.custom_views.A10C_VVI_View;
 import fr.astazou.cockpitplusplus.utils.BroadcastKeys;
 
 import static fr.astazou.cockpitplusplus.services.Konector.TAG;
@@ -23,7 +22,7 @@ import static fr.astazou.cockpitplusplus.services.Konector.TAG;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@linkk A10C_VVI.OnFragmentInteractionListener} interface
+ * {@linkk A10C_HSI.OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link A10C_HSI#  newInstance} factory method to
  * create an instance of this fragment.
@@ -31,12 +30,11 @@ import static fr.astazou.cockpitplusplus.services.Konector.TAG;
 public class A10C_HSI extends Fragment {
     //The background image of the panel, every view element (textview, buttons, images, ...) must
     //be properly resized according to this image
-    //private ImageView mImageViewGaugeVVI;
 
     //The container of every view elements which must properly takes the size of the background
     private LinearLayout mContainerLinearLayout;
 
-    //View for the VVI
+    //View for the HSI
     private A10C_HSI_View mA10CHSI_view;
     /**
      * Broadcast receiver to get data from DCS

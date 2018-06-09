@@ -5,6 +5,13 @@
     tools:context="fr.astazou.cockpitplusplus.fragments.A10C_VVI"
     tools:ignore="MissingPrefix">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:background="@android:color/black"/>
     <ImageView
         android:id="@+id/a10_vvi_background"
         android:layout_width="wrap_content"

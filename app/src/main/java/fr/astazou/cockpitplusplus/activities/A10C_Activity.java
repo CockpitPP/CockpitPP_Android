@@ -24,7 +24,7 @@ public class A10C_Activity extends Module_Activity {
         setContentView(R.layout.activity_a10c);
 
         //Load the fragments in the viewPager
-        A10C_PagerAdapter pagerAdapter = new A10C_PagerAdapter(getSupportFragmentManager(),new String[] { getString(R.string.a10c_vii) + " "});
+        A10C_PagerAdapter pagerAdapter = new A10C_PagerAdapter(getSupportFragmentManager(),new String[] { getString(R.string.a10c_vii) + " ", getString(R.string.a10c_hsi) + " "});
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(pagerAdapter);
 
