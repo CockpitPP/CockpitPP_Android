@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,11 +21,9 @@ import android.widget.RelativeLayout;
 
 import fr.astazou.cockpitplusplus.R;
 import fr.astazou.cockpitplusplus.custom_views.A10C_VVI_View;
-import fr.astazou.cockpitplusplus.custom_views.F15C_RWR_View;
 import fr.astazou.cockpitplusplus.utils.BroadcastKeys;
 
 import static android.view.Gravity.CENTER;
-import static fr.astazou.cockpitplusplus.services.Konector.TAG;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -17,8 +17,6 @@ import fr.astazou.cockpitplusplus.R;
 import fr.astazou.cockpitplusplus.custom_views.A10C_HSI_View;
 import fr.astazou.cockpitplusplus.utils.BroadcastKeys;
 
-import static fr.astazou.cockpitplusplus.services.Konector.TAG;
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
