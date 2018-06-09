@@ -4,13 +4,13 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:ignore="MissingPrefix"
 tools:context="fr.astazou.cockpitplusplus.fragments.A10C_VVI">
-    <ImageView
-        android:id="@+id/a10_hsi_background"
+    <LinearLayout
+        android:id="@+id/a_10_hsi_containerLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:contentDescription="@null"/>
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:background="@android:color/black"/>
 
 </FrameLayout>

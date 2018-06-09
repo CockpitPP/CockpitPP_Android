@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context="fr.astazou.cockpitplusplus.fragments.A10C_VVI"
     tools:ignore="MissingPrefix">
+
     <ImageView
         android:id="@+id/a10_vvi_background"
         android:layout_width="wrap_content"
@@ -45,7 +46,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 

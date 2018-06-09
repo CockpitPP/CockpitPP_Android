@@ -75,9 +75,10 @@ public class A10C_HSI extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d("asd","onCreateView");
-        View rootView = inflater.inflate(R.layout.fragment_a10_c__vvi, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_a10_c__hsi, container, false);
 
-        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.a10_hsi_compasscard_layout);
+        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.a_10_hsi_containerLinearLayout);
+
         mA10CHSI_view = new A10C_HSI_View(getActivity());
         mContainerLinearLayout.addView(mA10CHSI_view);
         return rootView;
