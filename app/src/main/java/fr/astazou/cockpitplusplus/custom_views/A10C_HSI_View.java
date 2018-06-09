@@ -85,7 +85,7 @@ public class A10C_HSI_View extends AppCompatImageView {
         mLastBackPlateDrawnIsPowerOff = true;
         paintHSIText.setColor(Color.WHITE);
         paintHSIText.setFakeBoldText(true);
-        paintHSIText.setTextSize(60);
+        paintHSIText.setTextSize(70);
         paintHSIText.setDither(true);
         paintWhiteLine.setColor(Color.WHITE);
         paintWhiteLine.setDither(true);
@@ -187,7 +187,7 @@ public class A10C_HSI_View extends AppCompatImageView {
          ************************************************************************************************/
 
         String rangeString = String.format(Locale.ENGLISH, "%03d", mHSIRangeDigitB * 100 + mHSIRangeDigitC * 10 + mHSIRangeDigitD);
-        localCanvas.drawText(rangeString, 125, 245, paintHSIText);
+        localCanvas.drawText(rangeString, pxFromDp(getContext(),65), pxFromDp(getContext(),117), paintHSIText);
         //Range number etched
         /************************************************************************************************
          ************************************************************************************************
@@ -198,7 +198,7 @@ public class A10C_HSI_View extends AppCompatImageView {
             absoluteCourse = absoluteCourse - 360;
         }
         String courseString = String.format(Locale.ENGLISH, "%03d", absoluteCourse);
-        localCanvas.drawText(courseString, 1000, 245, paintHSIText);
+        localCanvas.drawText(courseString, pxFromDp(getContext(),505), pxFromDp(getContext(),117), paintHSIText);
         //Course number etched
         /************************************************************************************************
          ************************************************************************************************
@@ -347,4 +347,14 @@ public class A10C_HSI_View extends AppCompatImageView {
         */
         invalidate();
     }
+
+    public static float dpFromPx(final Context context, final float px) {
+        return px / context.getResources().getDisplayMetrics().density;
+    }
+
+    public static float pxFromDp(final Context context, final float dp) {
+        return dp * context.getResources().getDisplayMetrics().density;
+    }
+
+
 }
