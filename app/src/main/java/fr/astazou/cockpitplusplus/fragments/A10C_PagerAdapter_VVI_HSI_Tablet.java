@@ -5,13 +5,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Created by jdahlblom on 04/09/2016.
+ * Created by JerkerD on 04/09/2016.
+ *
  */
-public class A10C_PagerAdapter extends FragmentPagerAdapter {
+public class A10C_PagerAdapter_VVI_HSI_Tablet extends FragmentPagerAdapter {
 
     private String tabtitles[];
 
-    public A10C_PagerAdapter(FragmentManager fm, String pTabtitles[]) {
+    public A10C_PagerAdapter_VVI_HSI_Tablet(FragmentManager fm, String pTabtitles[]) {
         super(fm);
         tabtitles = pTabtitles;
     }
@@ -26,13 +27,10 @@ public class A10C_PagerAdapter extends FragmentPagerAdapter {
         Fragment fragment;
         switch (position) {
             case 0:
-                fragment = new A10C_VVI();
-                break;
-            case 1:
-                fragment = new A10C_HSI();
+                fragment = new A10C_VVI_HSI();
                 break;
             default:
-                fragment = new A10C_HSI();
+                fragment = new A10C_VVI_HSI();
 
         }
         return fragment;
