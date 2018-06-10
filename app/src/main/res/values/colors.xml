@@ -36,8 +36,12 @@
     <color name="uh1hBackground">#C3C2C7</color>
     <color name="uh1hText">#1F2823</color>
 
-    <!-- Colors for the UH-1H HUEY -->
+    <!-- Colors for the Av8b Harrier -->
     <color name="av8bnaBackground">#B5BAC0</color>
     <color name="av8bnaText">#273134</color>
+
+    <!-- Colors for the Av8b Harrier -->
+    <color name="mig21bisBackground">#35A2BB</color>
+    <color name="mig21bisText">#D4D6DA</color>
 
 </resources>

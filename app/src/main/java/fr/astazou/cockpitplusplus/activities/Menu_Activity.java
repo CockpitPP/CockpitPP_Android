@@ -104,7 +104,8 @@ public class Menu_Activity extends Activity {
         mig21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast(R.string.not_available);
+                Intent intent = new Intent(Menu_Activity.this, MiG21Bis_Activity.class);
+                startActivity(intent);
             }
         });
         mig29.setOnClickListener(new View.OnClickListener() {
