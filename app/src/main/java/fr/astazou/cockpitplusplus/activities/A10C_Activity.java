@@ -5,14 +5,10 @@ import android.os.Bundle;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import fr.astazou.cockpitplusplus.R;
-import fr.astazou.cockpitplusplus.custom_views.A10C_VVI_View;
 import fr.astazou.cockpitplusplus.fragments.A10C_PagerAdapter;
-import fr.astazou.cockpitplusplus.fragments.AV8BNA_PagerAdapter;
 
 public class A10C_Activity extends Module_Activity {
 
