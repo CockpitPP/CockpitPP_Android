@@ -21,6 +21,7 @@
     <string name="menu_a10c">A-10C Warthog</string>
     <string name="menu_ajs37">AJS-37 Viggen</string>
     <string name="menu_c101">C-101EB</string>
+    <string name="menu_fa18c">F/A-18C Hornet</string>
     <string name="menu_f15c">F-15C Eagle</string>
     <string name="menu_f5e">F-5E Tiger II</string>
     <string name="menu_l39">L-39 Albatros</string>
@@ -67,7 +68,7 @@
     <string name="not_working_intro">Still having trouble to configure the app?</string>
     <string name="not_working_subintro">If you are sure you have exactly followed the installation guide and you still have problem to connect the app with the game, here you will find some ideas about possible problems</string>
     <string name="not_working_step1">1) In the <b>Cockpit++.lua</b>, are you sure you typed your Android IP like this:\nlocal clientIP={\"192.168.0.10\"}\nand not like this:\nlocal clientIP={192.168.0.10}\n?</string>
-    <string name="not_working_step2">2) In the <b>Cockpit++.lua</b>, are you sure you didn\'t touch/remove/add any \"--\" characters? They are used add comments in the script, they are not interpreted by the computer. You can manipulate them if you have some programming knowledges</string>
+    <string name="not_working_step2">2) In the <b>Cockpit++.lua</b>, are you sure you didn\'t touch/remove/add any \"&#8212;\" characters? They are used add comments in the script, they are not interpreted by the computer. You can manipulate them if you have some programming knowledges</string>
     <string name="not_working_step3">3) Are you sure your computer where DCS is running is on the same network than your Android?</string>
     <string name="not_working_step4">4) Maybe you have a blocking antiVirus/firewall?</string>
     <string name="not_working_step5">5) Maybe your refused some permission on your Android for this app?</string>
@@ -83,15 +84,15 @@
     <string name="discord_contribute">https://discord.gg/MbGUthb</string>
 
     <!-- About -->
-    <string name="about_by_who">By <i><b>Astazou</b></i>, <i>Simon CHEVALIER</i></string>
+    <string name="about_by_who">Started by <i><b>Astazou</b></i>, <i>Simon CHEVALIER</i></string>
     <string name="about_intro">Cockpit++ is an application for DCS (Digital Combat Simulator), if you don\'t own the game with proper modules this application is useless for you, sorry bro!</string>
     <string name="about_thanks">I would like to thank everybody who helped me for this app:\n- friends\n- ED\'s community ( <a href="https://forums.eagle.ru/">forums.eagle.ru</a> )\n- CheckSix\'s community ( <a href="http://www.checksix-forums.com/index.php">checksix-forums.com</a> )\n- Hoggit\'s community ( <a href="https://www.reddit.com/r/hoggit/">www.reddit.com/r/hoggit/</a> )\n- Razbam</string>
     <string name="about_thanks_photo">Background image is from <a href="https://pixabay.com/fr/ciel-nuage-coucher-de-soleil-gris-1054733/">pixabay.com/fr/ciel-nuage-coucher-de-soleil-gris-1054733/</a> </string>
     <string name="about_thanks_font">Font are from <a href="http://www.dafont.com/fr/digital-display-tfb.font">http://www.dafont.com/fr/digital-display-tfb.font</a> and from  <a href="http://www.dafont.com/fr/hemi-head.font">http://www.dafont.com/fr/hemi-head.font</a> </string>
     <string name="about_thanks_Huertix">Special thanks to <b><i>Huertix</i></b>, his app for the <b><i>A-10C Warthog</i></b> motivated me to developp Cockpit++, here is his app <a href="https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta">https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta</a> </string>
-    <string name="about_contributors">Also special thanks to contributors of this project:\n- **Your nickname if you contribute :D** </string>
+    <string name="about_contributors">Also special thanks to contributors of this project:\n- <b><i>ArthurDCS</i></b> for the VVI and the HSI for the A-10C \n- **Your nickname if you contribute :D** </string>
     <!-- \n- <b><i>K4ngoo</i></b> for the radio panel of the M2kC! <a href="https://github.com/AlexFaraino/">https://github.com/AlexFaraino/</a>  -->
-    <string name="about_github">Do you want to take part of the project? Feel free to contribute here <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> (but documentation will come later) or come talk with us on our Discord server: </string>
+    <string name="about_github">Do you want to take part of the project? (translation?new panel?new plateform?&#8230; ?) Feel free to contribute here <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> (but documentation will come later) or come talk with us on our Discord server: </string>
 
     <!-- ChangeLog -->
     <string name="changelog">ChangeLog</string>
@@ -99,6 +100,7 @@
     <string name="changelog_2">09&#8211;14&#8211;2017:\n• INS for Mirage 2000C by Razbam\n• INS Knobs for Mirage 2000C by Razbam\n• Armament Panel for the Huey by BelSimTek\n</string>
     <string name="changelog_3">11&#8211;16&#8211;2017:\n• Better stability for Android 7 users\n• Fix bug of freeze after ejection\n• User can\'t anymore enter text in ports\n• Added explanations in the installation guide\n</string>
     <string name="changelog_4">12&#8211;15&#8211;2017:\n• Nozzle for AV-8B n/a Harrier by Razbam\n• Tablet mod to have several panels\n• The application is now open-sourced! (documentation will come soon)\n• Discord server opened for anyone\n</string>
+    <string name="changelog_5">06&#8211;10&#8211;2018:\n• VVI for the A-10C by Eagle Dynamics\n• HSI for the A-10C by Eagle Dynamics\n• Radar management panel for the Mig-21Bis by Leatherneck Simulations \n• The application has now a documentation to learn how to contribute(Github)\n</string>
 
     <!-- FAQ -->
     <string name="faq">Frequently Asked Question</string>
@@ -108,7 +110,7 @@
     <string name="faq_ios_plan"><b>- Any iOS plans?</b>\nFrom me, no, not for now, for one main reason: I would have to buy a mac, an ipad and Apple dev\' licence. But my code will be shared, we can imagine the .LUA code can be used by someone who wants to develop the iOS version ;)</string>
     <string name="faq_multi_device"><b>- Can I use several devices?</b>\nYes, just set properly the .lua file with Androids IP</string>
     <string name="faq_how_it_works"><b>- How it works?</b>\nDCS provides lua access to interact with the game, so I made a lua file to communicate by UDP with android devices using the wifi</string>
-    <string name="faq_contribute"><b>- I want to contribute and make a panel (or translate app in my language, or do test, or contribute as you want), how can I do?</b>\nCome on the project\'s GitHub and contribute: <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> (but documentation will come later) or come talk with us on our Discord server: </string>
+    <string name="faq_contribute"><b>- I want to contribute and make a panel (or translate app in my language, or do test, or contribute as you want), how can I do?</b>\nCome on the project\'s GitHub and contribute: <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> or come talk with us on our Discord server: </string>
     <string name="faq_not_working"><b>- My app is not working, what can I do?</b>\nRefer to the \"Guide\" on the menu, properly check every steps and if the problems are still here, check the page \"Not working?\" on the menu</string>
     <string name="faq_found_a_bug"><b>- I found a bug, what can I do to report it?</b>\n Open a ticket on GitHub, or tell us on our Discord ;)</string>
 
