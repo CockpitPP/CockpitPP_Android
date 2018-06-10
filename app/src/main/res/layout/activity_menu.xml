@@ -75,6 +75,19 @@
                 />
 
             <Button
+                android:id="@+id/fa18c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuButtonDisabledTextColor"
+                android:gravity="start|center_vertical"
+                android:scaleType="fitCenter"
+                android:padding="6dp"
+                android:background="@drawable/button_menu"
+                android:textSize="20sp"
+                android:text="@string/menu_fa18c"
+                />
+
+            <Button
                 android:id="@+id/f15c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

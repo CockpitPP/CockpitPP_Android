@@ -49,6 +49,7 @@ public class Menu_Activity extends Activity {
         Button ajs37 = (Button) findViewById(R.id.ajs37);
         Button av8bna = (Button) findViewById(R.id.av8bna);
         Button c101 = (Button) findViewById(R.id.c101);
+        Button fa18c = (Button) findViewById(R.id.fa18c);
         Button f15c = (Button) findViewById(R.id.f15c);
         Button f5e = (Button) findViewById(R.id.f5e);
         Button huey = (Button) findViewById(R.id.huey);
@@ -125,6 +126,12 @@ public class Menu_Activity extends Activity {
             }
         });
         c101.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast(R.string.not_available);
+            }
+        });
+        fa18c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showToast(R.string.not_available);
@@ -331,7 +338,7 @@ public class Menu_Activity extends Activity {
 
         //Fill the Dialog
         final String version = versionName;
-        final String changelog = getString(R.string.changelog_4) + "\n" +  getString(R.string.changelog_3) + "\n" + getString(R.string.changelog_2) + "\n" + getString(R.string.changelog_1);
+        final String changelog = getString(R.string.changelog_5) + "\n" +  getString(R.string.changelog_4) + "\n" +  getString(R.string.changelog_3) + "\n" + getString(R.string.changelog_2) + "\n" + getString(R.string.changelog_1);
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
