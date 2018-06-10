@@ -116,6 +116,7 @@
     <string name="a10c">A-10C</string>
     <string name="a10c_vii">VVI</string>
     <string name="a10c_hsi">HSI</string>
+    <string name="a10c_flight_gauges">Flight gauges</string>
     
     <!-- Mirage 2000C -->
     <string name="m2kc" translatable="false">M-2000C</string>
