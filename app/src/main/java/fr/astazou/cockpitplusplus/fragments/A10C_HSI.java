@@ -5,17 +5,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import fr.astazou.cockpitplusplus.R;
 import fr.astazou.cockpitplusplus.custom_views.A10C_HSI_View;
+import fr.astazou.cockpitplusplus.utils.A10C_Commands;
+import fr.astazou.cockpitplusplus.utils.AV8BNA_Commands;
 import fr.astazou.cockpitplusplus.utils.BroadcastKeys;
+import fr.astazou.cockpitplusplus.utils.UDPSender;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,12 +33,22 @@ import fr.astazou.cockpitplusplus.utils.BroadcastKeys;
  * create an instance of this fragment.
  */
 public class A10C_HSI extends Fragment {
-    //The background image of the panel, every view element (textview, buttons, images, ...) must
-    //be properly resized according to this image
 
     //The container of every view elements which must properly takes the size of the background
     private LinearLayout mContainerLinearLayout;
 
+    public enum HSIDial {
+        HEADINGSET, COURSESET
+    }
+
+    private View mHSITouchView;
+    private Button mHSIHeadingSetButton;
+    private Button mHSICourseSetButton;
+    private long mLastHSITap = System.currentTimeMillis();
+    private float mLastHSIYValue;
+    private A10C_VVI_HSI_COMBO.HSIDial mHSIDialChosen = A10C_VVI_HSI_COMBO.HSIDial.HEADINGSET;
+    private String mHSIChangeValueINC = "+0.05";
+    private String mHSIChangeValueDEC = "-0.05";
     //View for the HSI
     private A10C_HSI_View mA10CHSI_view;
     /**
@@ -40,9 +57,9 @@ public class A10C_HSI extends Fragment {
     BroadcastReceiver mBroadCastNewMessage = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(intent.getAction().contains(BroadcastKeys.A10C_HSI)) {
+            if (intent.getAction().contains(BroadcastKeys.A10C_HSI)) {
                 String data = intent.getExtras().getString(BroadcastKeys.A10C_HSI);
-                if(data != null && !data.isEmpty()){
+                if (data != null && !data.isEmpty()) {
                     mA10CHSI_view.setData(data);
                     //Log.d(TAG, "onReceive: !!!!!");
                 }
@@ -54,9 +71,9 @@ public class A10C_HSI extends Fragment {
         // Required empty public constructor
     }
 
-
     /**
      * Register the broadcast receiver
+     *
      * @param savedInstanceState
      */
     @Override
@@ -70,14 +87,101 @@ public class A10C_HSI extends Fragment {
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.d("asd","onCreateView");
+        //Log.d("asd","onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_a10_c__hsi, container, false);
 
         mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.a_10_hsi_containerLinearLayout);
 
         mA10CHSI_view = new A10C_HSI_View(getActivity());
         mContainerLinearLayout.addView(mA10CHSI_view);
+        mHSITouchView = (View) rootView.findViewById(R.id.a10_hsi_dials_touch_view_x);
+        mHSIHeadingSetButton = (Button) rootView.findViewById(R.id.a10_hsi_heading_set_button_x);
+        mHSICourseSetButton = (Button) rootView.findViewById(R.id.a10_hsi_course_set_button_x);
+        mHSITouchView.bringToFront();
+        mHSIHeadingSetButton.bringToFront();
+        mHSICourseSetButton.bringToFront();
+        mContainerLinearLayout.requestLayout();
+        Button.OnTouchListener hsiHeadingSetOnTouchListener = new Button.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        mHSIDialChosen = A10C_VVI_HSI_COMBO.HSIDial.HEADINGSET;
+                        if (System.currentTimeMillis() - mLastHSITap < 400) {
+                            Toast.makeText(getActivity().getBaseContext(), "Heading Set selected", Toast.LENGTH_SHORT).show();
+                        }
+                        mLastHSITap = System.currentTimeMillis();
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        };
+        mHSIHeadingSetButton.setOnTouchListener(hsiHeadingSetOnTouchListener);
+
+        Button.OnTouchListener hsiCourseSetOnTouchListener = new Button.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        mHSIDialChosen = A10C_VVI_HSI_COMBO.HSIDial.COURSESET;
+                        if (System.currentTimeMillis() - mLastHSITap < 400) {
+                            Toast.makeText(getActivity().getBaseContext(), "Course Set selected", Toast.LENGTH_SHORT).show();
+                        }
+                        mLastHSITap = System.currentTimeMillis();
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        };
+        mHSICourseSetButton.setOnTouchListener(hsiCourseSetOnTouchListener);
+
+        View.OnTouchListener hsiOnTouchListener = new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_UP:
+                        view.performClick();
+                        break;
+                    case MotionEvent.ACTION_DOWN:
+                        //view.performClick();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        if (motionEvent.getY() < mLastHSIYValue) {
+                            //INC
+                            if (mHSIDialChosen == A10C_VVI_HSI_COMBO.HSIDial.COURSESET) {
+                                sendCommand(A10C_Commands.HSICourseSetChange, mHSIChangeValueINC);
+                            } else {
+                                //HEADING SET
+                                sendCommand(A10C_Commands.HSIHeadingSetChange, mHSIChangeValueINC);
+                            }
+                        } else {
+                            //DEC
+                            if (mHSIDialChosen == A10C_VVI_HSI_COMBO.HSIDial.COURSESET) {
+                                sendCommand(A10C_Commands.HSICourseSetChange, mHSIChangeValueDEC);
+                            } else {
+                                //HEADING SET
+                                sendCommand(A10C_Commands.HSIHeadingSetChange, mHSIChangeValueDEC);
+                            }
+                        }
+                        mLastHSIYValue = motionEvent.getY();
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        };
+        mHSITouchView.setOnTouchListener(hsiOnTouchListener);
         return rootView;
+    }
+
+    private void sendCommand(A10C_Commands pCommand, String pValue) {
+        UDPSender.getInstance().sendToDCS(pCommand.getTypeButton().getCode(), pCommand.getDevice().getCode(), pCommand.getCode(), pValue, getContext());
     }
 
     /**
@@ -91,6 +195,7 @@ public class A10C_HSI extends Fragment {
 
     /**
      * Detect when the user is rotating the phone/tablet
+     *
      * @param newConfig
      */
     @Override
@@ -133,8 +238,6 @@ public class A10C_HSI extends Fragment {
         super.onDestroy();
         getActivity().unregisterReceiver(mBroadCastNewMessage);
     }
-
-
 
 
 }

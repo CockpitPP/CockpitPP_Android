@@ -1,9 +1,11 @@
 package fr.astazou.cockpitplusplus.activities;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,8 +37,6 @@ public class A10C_Activity_Tablet extends Module_Activity {
                 textViewToConvert.setTypeface(fontTypeFace);
             }
         }
-
-
     }
 
     @Override

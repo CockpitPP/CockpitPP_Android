@@ -3,6 +3,7 @@ package fr.astazou.cockpitplusplus.fragments;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.MotionEvent;
 
 /**
  * Created by jdahlblom on 04/09/2016.
@@ -33,10 +34,10 @@ public class A10C_PagerAdapter extends FragmentPagerAdapter {
                 break;
             default:
                 fragment = new A10C_HSI();
-
         }
         return fragment;
     }
+
 
     @Override
     public CharSequence getPageTitle(int position) {

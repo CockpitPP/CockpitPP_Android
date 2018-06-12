@@ -27,11 +27,10 @@ public class A10C_PagerAdapter_VVI_HSI_Tablet extends FragmentPagerAdapter {
         Fragment fragment;
         switch (position) {
             case 0:
-                fragment = new A10C_VVI_HSI();
+                fragment = new A10C_VVI_HSI_COMBO();
                 break;
             default:
-                fragment = new A10C_VVI_HSI();
-
+                fragment = new A10C_VVI_HSI_COMBO();
         }
         return fragment;
     }

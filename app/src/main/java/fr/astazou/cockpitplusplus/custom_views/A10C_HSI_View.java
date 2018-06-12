@@ -193,7 +193,7 @@ public class A10C_HSI_View extends AppCompatImageView {
          ************************************************************************************************
          ************************************************************************************************/
 
-        Log.d("Heading + Needle", String.valueOf(360-mHSIHeading) + " " + String.valueOf(mHSICourseNeedle));
+        //Log.d("Heading + Needle", String.valueOf(360-mHSIHeading) + " " + String.valueOf(mHSICourseNeedle));
         int absoluteCourse = 360 - Math.round(mHSIHeading) + Math.round(mHSICourseNeedle);
         if (absoluteCourse >= 360) {
             absoluteCourse = absoluteCourse - 360;
@@ -201,7 +201,7 @@ public class A10C_HSI_View extends AppCompatImageView {
         if (absoluteCourse < 0) {
             absoluteCourse = absoluteCourse + 360;
         }
-        Log.d("absoluteCourse", String.valueOf(absoluteCourse));
+        //Log.d("absoluteCourse", String.valueOf(absoluteCourse));
         String courseString = String.format(Locale.ENGLISH, "%03d", absoluteCourse);
         localCanvas.drawText(courseString, pxFromDp(getContext(),505), pxFromDp(getContext(),122), paintHSIText);
         //Course number etched
@@ -308,6 +308,12 @@ public class A10C_HSI_View extends AppCompatImageView {
     private Bitmap ScaleBearingNumberLine(Bitmap bitmapToScale, Bitmap compassCardBitmap) {
         int finalWidth = (int) Math.round(compassCardBitmap.getWidth() * 1.2);
         return Bitmap.createScaledBitmap(bitmapToScale, (int) finalWidth, (int) finalWidth, true);
+    }
+
+    @Override
+    public boolean performClick() {
+        super.performClick();
+        return true;
     }
 
     public void setData(String pData) {
