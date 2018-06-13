@@ -185,25 +185,27 @@ public class A10C_HSI_View extends AppCompatImageView {
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-
-        String rangeString = String.format(Locale.ENGLISH, "%03d", mHSIRangeDigitB * 100 + mHSIRangeDigitC * 10 + mHSIRangeDigitD);
-        localCanvas.drawText(rangeString, pxFromDp(getContext(),63), pxFromDp(getContext(),122), paintHSIText);
+        if (!mHSIPowerIsOff) {
+            String rangeString = String.format(Locale.ENGLISH, "%03d", mHSIRangeDigitB * 100 + mHSIRangeDigitC * 10 + mHSIRangeDigitD);
+            localCanvas.drawText(rangeString, pxFromDp(getContext(), 63), pxFromDp(getContext(), 122), paintHSIText);
+        }
         //Range number etched
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-
-        //Log.d("Heading + Needle", String.valueOf(360-mHSIHeading) + " " + String.valueOf(mHSICourseNeedle));
-        int absoluteCourse = 360 - Math.round(mHSIHeading) + Math.round(mHSICourseNeedle);
-        if (absoluteCourse >= 360) {
-            absoluteCourse = absoluteCourse - 360;
+        if (!mHSIPowerIsOff) {
+            //Log.d("Heading + Needle", String.valueOf(360-mHSIHeading) + " " + String.valueOf(mHSICourseNeedle));
+            int absoluteCourse = 360 - Math.round(mHSIHeading) + Math.round(mHSICourseNeedle);
+            if (absoluteCourse >= 360) {
+                absoluteCourse = absoluteCourse - 360;
+            }
+            if (absoluteCourse < 0) {
+                absoluteCourse = absoluteCourse + 360;
+            }
+            //Log.d("absoluteCourse", String.valueOf(absoluteCourse));
+            String courseString = String.format(Locale.ENGLISH, "%03d", absoluteCourse);
+            localCanvas.drawText(courseString, pxFromDp(getContext(), 505), pxFromDp(getContext(), 122), paintHSIText);
         }
-        if (absoluteCourse < 0) {
-            absoluteCourse = absoluteCourse + 360;
-        }
-        //Log.d("absoluteCourse", String.valueOf(absoluteCourse));
-        String courseString = String.format(Locale.ENGLISH, "%03d", absoluteCourse);
-        localCanvas.drawText(courseString, pxFromDp(getContext(),505), pxFromDp(getContext(),122), paintHSIText);
         //Course number etched
         /************************************************************************************************
          ************************************************************************************************
@@ -254,7 +256,6 @@ public class A10C_HSI_View extends AppCompatImageView {
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-
 
 
         Bitmap finalImage = ScaleBitmap(workPlateBitmap, canvas.getWidth(), canvas.getHeight());
@@ -324,8 +325,8 @@ public class A10C_HSI_View extends AppCompatImageView {
         mHSIRangeFlagIsOn = Float.parseFloat(messageArray[2]) > 0;
         mHSIOffCourseWarningFlagIsOn = Float.parseFloat(messageArray[3]) > 0;
         mHSIHeading = 360 * Float.parseFloat(messageArray[4]);
-        mHSIBearing1 = 360 * Float.parseFloat(messageArray[5]) -360;
-        mHSIBearing2 = 360 * Float.parseFloat(messageArray[6]) -360;
+        mHSIBearing1 = 360 * Float.parseFloat(messageArray[5]) - 360;
+        mHSIBearing2 = 360 * Float.parseFloat(messageArray[6]) - 360;
         mHSIHeadingBug = 360 * Float.parseFloat(messageArray[7]);
         //mHSICourseCounterA
         //mHSICourseCounterB

@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ import fr.astazou.cockpitplusplus.utils.UDPSender;
 public class A10C_HSI extends Fragment {
 
     //The container of every view elements which must properly takes the size of the background
-    private LinearLayout mContainerLinearLayout;
+    private FrameLayout mContainerLinearLayout;
 
     public enum HSIDial {
         HEADINGSET, COURSESET
@@ -89,18 +90,28 @@ public class A10C_HSI extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Log.d("asd","onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_a10_c__hsi, container, false);
-
-        mContainerLinearLayout = (LinearLayout) rootView.findViewById(R.id.a_10_hsi_containerLinearLayout);
-
+        mContainerLinearLayout = (FrameLayout) rootView.findViewById(R.id.a_10_hsi_containerLinearLayout);
         mA10CHSI_view = new A10C_HSI_View(getActivity());
         mContainerLinearLayout.addView(mA10CHSI_view);
-        mHSITouchView = (View) rootView.findViewById(R.id.a10_hsi_dials_touch_view_x);
-        mHSIHeadingSetButton = (Button) rootView.findViewById(R.id.a10_hsi_heading_set_button_x);
-        mHSICourseSetButton = (Button) rootView.findViewById(R.id.a10_hsi_course_set_button_x);
+        mHSITouchView = (View) rootView.findViewById(R.id.a10_hsi_dials_touch_view);
+        mHSIHeadingSetButton = (Button) rootView.findViewById(R.id.a10_hsi_heading_set_button);
+        mHSICourseSetButton = (Button) rootView.findViewById(R.id.a10_hsi_course_set_button);
+
         mHSITouchView.bringToFront();
         mHSIHeadingSetButton.bringToFront();
         mHSICourseSetButton.bringToFront();
         mContainerLinearLayout.requestLayout();
+
+        /*
+        This works!?
+        View.OnTouchListener test = new Button.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return false;
+            }
+        };
+        mA10CHSI_view.setOnTouchListener(test);
+        */
         Button.OnTouchListener hsiHeadingSetOnTouchListener = new Button.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -142,7 +153,6 @@ public class A10C_HSI extends Fragment {
         View.OnTouchListener hsiOnTouchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_UP:
                         view.performClick();
