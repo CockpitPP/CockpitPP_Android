@@ -32,6 +32,11 @@ public class A10C_PagerAdapter extends FragmentPagerAdapter {
             case 1:
                 fragment = new A10C_HSI();
                 break;
+            case 2:
+                fragment = new A10C_EMI_LEFT();
+            case 3:
+                fragment = new A10C_EMI_RIGHT();
+                break;
             default:
                 fragment = new A10C_HSI();
         }
