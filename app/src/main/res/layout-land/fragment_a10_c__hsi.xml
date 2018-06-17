@@ -17,7 +17,8 @@
             android:id="@+id/a10_hsi_dials_touch_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="7.5" />
+            android:layout_weight="7.5"
+            android:background="@android:color/holo_red_dark"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,14 +32,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/holo_blue_dark" />
 
             <Button
                 android:id="@+id/a10_hsi_course_set_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/holo_blue_bright" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
