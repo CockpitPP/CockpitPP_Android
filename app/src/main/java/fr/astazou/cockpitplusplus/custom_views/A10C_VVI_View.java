@@ -41,7 +41,7 @@ public class A10C_VVI_View extends AppCompatImageView {
         super.onDraw(canvas);
         //Log.d(TAG, "onDraw: VVI 1");
         float imageCenterX = (float) canvas.getWidth()/2f;
-        float imageCenterY = (float) ((canvas.getHeight()/2f) + 7);
+        float imageCenterY = (float) ((canvas.getHeight()/2f) + 7f);
 
         float angle = Float.parseFloat(mData);
         if(angle > 1){
@@ -57,10 +57,10 @@ public class A10C_VVI_View extends AppCompatImageView {
         Log.d(TAG, "mNeedleBitmap.getWidth() " + mVVINeedleBitmap.getWidth());*/
         if(canvas.getWidth() > canvas.getHeight()){
             //landscape
-            finalWidth = Math.round(canvas.getHeight() / 1.9);
+            finalWidth = Math.round(canvas.getHeight() / 1.9f);
         }else {
             //portrait
-            finalWidth = Math.round(canvas.getWidth() / 1.9);
+            finalWidth = Math.round(canvas.getWidth() / 1.9f);
         }
         if(finalWidth != mFinalWidth || mScaledVVINeedleBitmap == null){
             mScaledVVINeedleBitmap = ScaleNeedleBitmap(finalWidth);
