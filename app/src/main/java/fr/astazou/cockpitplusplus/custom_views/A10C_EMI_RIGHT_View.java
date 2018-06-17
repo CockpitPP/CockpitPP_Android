@@ -57,14 +57,14 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        if(!mDataHasBeenReceived){
+        if (!mDataHasBeenReceived) {
             //For testing on emulator
-            mLeftEngFanSpeed = 0;
-            mRightEngFanSpeed = 0;
-            mLeftEngFuelFlow = 5;
-            mRightEngFuelFlow = 0;
-            mAPURPM = 270;
-            mAPUTemp = 0;
+            mLeftEngFanSpeed = 2;
+            mRightEngFanSpeed = 17;
+            mLeftEngFuelFlow = 90;
+            mRightEngFuelFlow = 148;
+            mAPURPM = 330;
+            mAPUTemp = 340;
         }
 
         Canvas localCanvas = new Canvas();
@@ -72,8 +72,6 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
         Bitmap workPlateBitmap = mEMIRightPanelBackgroundBitmap.copy(mEMIRightPanelBackgroundBitmap.getConfig(), true);
         //android.graphics.Bitmap.Config.ARGB_8888
         localCanvas.setBitmap(workPlateBitmap);
-        float imageCenterX = (float) workPlateBitmap.getWidth() / 2f;
-        float imageCenterY = (float) workPlateBitmap.getHeight() / 2f;
 
         if (mScaledEMIRightSmallNeedleBitmap == null) {
             ScaleSmallNeedle(workPlateBitmap);
@@ -84,103 +82,73 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
 
         mMatrix.reset();
         //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMIRightSmallNeedleBitmap.getWidth()/2f, -mScaledEMIRightSmallNeedleBitmap.getHeight()/2f);
+        mMatrix.postTranslate(-mScaledEMIRightBigNeedleBitmap.getWidth() / 2f, -mScaledEMIRightBigNeedleBitmap.getHeight() + (mScaledEMIRightBigNeedleBitmap.getHeight() - (mScaledEMIRightBigNeedleBitmap.getHeight() * 0.87f)));
         mMatrix.postRotate(mLeftEngFanSpeed);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(200, 262);
+        mMatrix.postTranslate(206, 200);
         localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
         //Left FAN speed gauge ready
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-/*        mMatrix.reset();
-        //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftSmallNeedleBitmap.getWidth()/2f, -mScaledEMILeftSmallNeedleBitmap.getHeight()/2f);
-        mMatrix.postRotate(mRightTemp);
-        //Where it should be drawn
-        //Center of the gauge
-        mMatrix.postTranslate(835, 262);
-        localCanvas.drawBitmap(mScaledEMILeftSmallNeedleBitmap, mMatrix, null);
         mMatrix.reset();
         //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftBigNeedleBitmap.getWidth()/2f, -mScaledEMILeftBigNeedleBitmap.getHeight()+ (mScaledEMILeftBigNeedleBitmap.getHeight()-(mScaledEMILeftBigNeedleBitmap.getHeight()*0.87f)));
-        mMatrix.postRotate(mRightTempTenth);
+        mMatrix.postTranslate(-mScaledEMIRightBigNeedleBitmap.getWidth() / 2f, -mScaledEMIRightBigNeedleBitmap.getHeight() + (mScaledEMIRightBigNeedleBitmap.getHeight() - (mScaledEMIRightBigNeedleBitmap.getHeight() * 0.87f)));
+        mMatrix.postRotate(mRightEngFanSpeed);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(713, 255);
-        localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
-        //Right Temp gauge ready
+        mMatrix.postTranslate(570, 200);
+        localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
+        //Right FAN speed gauge ready
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-/*
         mMatrix.reset();
         //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftSmallNeedleBitmap.getWidth()/2f, -mScaledEMILeftSmallNeedleBitmap.getHeight()/2f);
-        mMatrix.postRotate(mLeftEngCoreSpeed);
+        mMatrix.postTranslate(-mScaledEMIRightBigNeedleBitmap.getWidth() / 2f, -mScaledEMIRightBigNeedleBitmap.getHeight() + (mScaledEMIRightBigNeedleBitmap.getHeight() - (mScaledEMIRightBigNeedleBitmap.getHeight() * 0.87f)));
+        mMatrix.postRotate(mLeftEngFuelFlow);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(180, 635);
-        localCanvas.drawBitmap(mScaledEMILeftSmallNeedleBitmap, mMatrix, null);
-        mMatrix.reset();
-        //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftBigNeedleBitmap.getWidth()/2f, -mScaledEMILeftBigNeedleBitmap.getHeight()+ (mScaledEMILeftBigNeedleBitmap.getHeight()-(mScaledEMILeftBigNeedleBitmap.getHeight()*0.87f)));
-        mMatrix.postRotate(mLeftEngCoreSpeedTenth);
-        //Where it should be drawn
-        //Center of the gauge
-        mMatrix.postTranslate(255, 712);
-        localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
-        //Left RPM gauge ready
-        /************************************************************************************************
-        ************************************************************************************************
-        ************************************************************************************************/
-/*
-        mMatrix.reset();
-        //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftSmallNeedleBitmap.getWidth()/2f, -mScaledEMILeftSmallNeedleBitmap.getHeight()/2f);
-        mMatrix.postRotate(mRightEngCoreSpeed);
-        //Where it should be drawn
-        //Center of the gauge
-        mMatrix.postTranslate(638, 635);
-        localCanvas.drawBitmap(mScaledEMILeftSmallNeedleBitmap, mMatrix, null);
-        mMatrix.reset();
-        //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftBigNeedleBitmap.getWidth()/2f, -mScaledEMILeftBigNeedleBitmap.getHeight()+ (mScaledEMILeftBigNeedleBitmap.getHeight()-(mScaledEMILeftBigNeedleBitmap.getHeight()*0.87f)));
-        mMatrix.postRotate(mRightEngCoreSpeedTenth);
-        //Where it should be drawn
-        //Center of the gauge
-        mMatrix.postTranslate(713, 712);
-        localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
-        //Right RPM gauge ready
+        mMatrix.postTranslate(200, 555);
+        localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
+        //Left Fuel flow gauge ready
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-  /*      mMatrix.reset();
-        //The swivel point of the needle
         mMatrix.reset();
         //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftBigNeedleBitmap.getWidth()/2f, -mScaledEMILeftBigNeedleBitmap.getHeight()+ (mScaledEMILeftBigNeedleBitmap.getHeight()-(mScaledEMILeftBigNeedleBitmap.getHeight()*0.87f)));
-        mMatrix.postRotate(mLeftEngOilPressure);
+        mMatrix.postTranslate(-mScaledEMIRightBigNeedleBitmap.getWidth() / 2f, -mScaledEMIRightBigNeedleBitmap.getHeight() + (mScaledEMIRightBigNeedleBitmap.getHeight() - (mScaledEMIRightBigNeedleBitmap.getHeight() * 0.87f)));
+        mMatrix.postRotate(mRightEngFuelFlow);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(255, 1165);
-        localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
-        //Left Oil pressure gauge ready
+        mMatrix.postTranslate(564, 555);
+        localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
+        //Right Fuel flow gauge ready
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-    /*    mMatrix.reset();
-        //The swivel point of the needle
         mMatrix.reset();
         //The swivel point of the needle
-        mMatrix.postTranslate(-mScaledEMILeftBigNeedleBitmap.getWidth()/2f, -mScaledEMILeftBigNeedleBitmap.getHeight()+ (mScaledEMILeftBigNeedleBitmap.getHeight()-(mScaledEMILeftBigNeedleBitmap.getHeight()*0.87f)));
-        mMatrix.postRotate(mRightEngOilPressure);
+        mMatrix.postTranslate(-mScaledEMIRightBigNeedleBitmap.getWidth() / 2f, -mScaledEMIRightBigNeedleBitmap.getHeight() + (mScaledEMIRightBigNeedleBitmap.getHeight() - (mScaledEMIRightBigNeedleBitmap.getHeight() * 0.87f)));
+        mMatrix.postRotate(mAPURPM);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(713, 1165);
-        localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
-        //Right Oil pressure gauge ready
+        mMatrix.postTranslate(200, 905);
+        localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
+        //APU RPM (left) gauge ready
+        /************************************************************************************************
+         ************************************************************************************************
+         ************************************************************************************************/
+        mMatrix.reset();
+        //The swivel point of the needle
+        mMatrix.postTranslate(-mScaledEMIRightBigNeedleBitmap.getWidth() / 2f, -mScaledEMIRightBigNeedleBitmap.getHeight() + (mScaledEMIRightBigNeedleBitmap.getHeight() - (mScaledEMIRightBigNeedleBitmap.getHeight() * 0.87f)));
+        mMatrix.postRotate(mAPUTemp);
+        //Where it should be drawn
+        //Center of the gauge
+        mMatrix.postTranslate(564, 905);
+        localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
+        //APU RPM (left) gauge ready
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
@@ -215,10 +183,9 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
     }
 
     private void ScaleBigNeedle(Bitmap bitmap) {
-        float scale = mEMIRightBigNeedleBitmap.getHeight() / mEMIRightBigNeedleBitmap.getWidth();
-        int finalWidth = (int) Math.round(bitmap.getWidth() * 0.08);
-        //int finalHeight = (int) Math.round(bitmap.getWidth() * 0.22);
-        mScaledEMIRightBigNeedleBitmap = Bitmap.createScaledBitmap(mEMIRightBigNeedleBitmap, (int) finalWidth, (int) Math.round(finalWidth * scale), true);
+        float scale = mEMIRightBigNeedleBitmap.getHeight() / (mEMIRightBigNeedleBitmap.getWidth() * 1.01f);
+        float finalWidth = Math.round(bitmap.getWidth() * 0.053f);
+        mScaledEMIRightBigNeedleBitmap = Bitmap.createScaledBitmap(mEMIRightBigNeedleBitmap, Math.round(finalWidth), Math.round(finalWidth * scale), true);
     }
 
     private void ScaleSmallNeedle(Bitmap bitmap) {
@@ -237,12 +204,12 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
 
         mDataHasBeenReceived = true;
         String[] messageArray = pData.split(";");
-        mLeftEngFanSpeed = 270* Float.parseFloat(messageArray[0]);
-        mRightEngFanSpeed = 270* Float.parseFloat(messageArray[1]);
-        mLeftEngFuelFlow = 360 * Float.parseFloat(messageArray[2]);
-        mRightEngFuelFlow = 360 * Float.parseFloat(messageArray[3]);
-        mAPURPM = 270 * Float.parseFloat(messageArray[4]) + 135f;
-        mAPUTemp = 270 * Float.parseFloat(messageArray[5]) + 135f;
+        mLeftEngFanSpeed = 315 * Float.parseFloat(messageArray[0]) + 50f;
+        mRightEngFanSpeed = 315 * Float.parseFloat(messageArray[1]) + 50f;
+        mLeftEngFuelFlow = 302 * Float.parseFloat(messageArray[2]) + 148;
+        mRightEngFuelFlow = 302 * Float.parseFloat(messageArray[3]) + 148;
+        mAPURPM = 250 * Float.parseFloat(messageArray[4]) + 90f;
+        mAPUTemp = 250 * Float.parseFloat(messageArray[5]) + 90f;
         /*
             EMI right panel gauges table :
             [0] = engine_left_fan_speed

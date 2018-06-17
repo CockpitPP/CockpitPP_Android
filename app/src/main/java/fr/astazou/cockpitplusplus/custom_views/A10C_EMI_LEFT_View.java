@@ -83,8 +83,6 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         Bitmap workPlateBitmap = mEMILeftPanelBackgroundBitmap.copy(mEMILeftPanelBackgroundBitmap.getConfig(), true);
         //android.graphics.Bitmap.Config.ARGB_8888
         localCanvas.setBitmap(workPlateBitmap);
-        float imageCenterX = (float) workPlateBitmap.getWidth() / 2f;
-        float imageCenterY = (float) workPlateBitmap.getHeight() / 2f;
 
         if (mScaledEMILeftSmallNeedleBitmap == null) {
             ScaleSmallNeedle(workPlateBitmap);
@@ -234,10 +232,9 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
     }
 
     private void ScaleBigNeedle(Bitmap bitmap) {
-        float scale = mEMILeftBigNeedleBitmap.getHeight() / mEMILeftBigNeedleBitmap.getWidth();
-        int finalWidth = (int) Math.round(bitmap.getWidth() * 0.07);
-        //int finalHeight = (int) Math.round(bitmap.getWidth() * 0.20);
-        mScaledEMILeftBigNeedleBitmap = Bitmap.createScaledBitmap(mEMILeftBigNeedleBitmap, (int) finalWidth, (int) Math.round(finalWidth * scale), true);
+        float scale = mEMILeftBigNeedleBitmap.getHeight() / (mEMILeftBigNeedleBitmap.getWidth()*1.01f);
+        float finalWidth = Math.round(bitmap.getWidth() * 0.058f);
+        mScaledEMILeftBigNeedleBitmap = Bitmap.createScaledBitmap(mEMILeftBigNeedleBitmap, Math.round(finalWidth), Math.round(finalWidth * scale), true);
     }
 
     private void ScaleSmallNeedle(Bitmap bitmap) {
