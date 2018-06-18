@@ -97,7 +97,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mLeftTemp);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(377, 262);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.391484942887f, workPlateBitmap.getHeight()*0.187009279086f);
         localCanvas.drawBitmap(mScaledEMILeftSmallNeedleBitmap, mMatrix, null);
         mMatrix.reset();
         //The swivel point of the needle
@@ -105,7 +105,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mLeftTempTenth);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(255, 255);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.264797507788f, workPlateBitmap.getHeight()*0.182012847966f);
         localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
         //Left Temp gauge ready
         /************************************************************************************************
@@ -117,7 +117,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mRightTemp);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(835, 262);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.86708203530633437175493250259605f, workPlateBitmap.getHeight()*0.1870092790863668807994289793005f);
         localCanvas.drawBitmap(mScaledEMILeftSmallNeedleBitmap, mMatrix, null);
         mMatrix.reset();
         //The swivel point of the needle
@@ -125,7 +125,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mRightTempTenth);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(713, 255);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.74039460020768431983385254413292f, workPlateBitmap.getHeight()*0.18201284796573875802997858672377f);
         localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
         //Right Temp gauge ready
         /************************************************************************************************
@@ -138,7 +138,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mLeftEngCoreSpeed);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(180, 635);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.1869158878504672897196261682243f, workPlateBitmap.getHeight()*0.45324768022840827980014275517488f);
         localCanvas.drawBitmap(mScaledEMILeftSmallNeedleBitmap, mMatrix, null);
         mMatrix.reset();
         //The swivel point of the needle
@@ -146,7 +146,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mLeftEngCoreSpeedTenth);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(255, 712);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.26479750778816199376947040498442f, workPlateBitmap.getHeight()*0.50820842255531763026409707351892f);
         localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
         //Left RPM gauge ready
         /************************************************************************************************
@@ -159,7 +159,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mRightEngCoreSpeed);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(638, 635);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.66251298026998961578400830737279f, workPlateBitmap.getHeight()*0.45324768022840827980014275517488f);
         localCanvas.drawBitmap(mScaledEMILeftSmallNeedleBitmap, mMatrix, null);
         mMatrix.reset();
         //The swivel point of the needle
@@ -167,7 +167,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mRightEngCoreSpeedTenth);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(713, 712);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.74039460020768431983385254413292f, workPlateBitmap.getHeight()*0.50820842255531763026409707351892f);
         localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
         //Right RPM gauge ready
         /************************************************************************************************
@@ -181,7 +181,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mLeftEngOilPressure);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(255, 1165);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.26479750778816199376947040498442f, workPlateBitmap.getHeight()*0.83154889364739471805852962169879f);
         localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
         //Left Oil pressure gauge ready
         /************************************************************************************************
@@ -195,7 +195,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mMatrix.postRotate(mRightEngOilPressure);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(713, 1165);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.74039460020768431983385254413292f, workPlateBitmap.getHeight()*0.83154889364739471805852962169879f);
         localCanvas.drawBitmap(mScaledEMILeftBigNeedleBitmap, mMatrix, null);
         //Right Oil pressure gauge ready
         /************************************************************************************************
@@ -285,7 +285,7 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
 		*/
         invalidate();
     }
-
+/*
     public static float dpFromPx(final Context context, final float px) {
         return px / context.getResources().getDisplayMetrics().density;
     }
@@ -293,6 +293,6 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
     public static float pxFromDp(final Context context, final float dp) {
         return dp * context.getResources().getDisplayMetrics().density;
     }
-
+*/
 
 }

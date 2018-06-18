@@ -85,7 +85,6 @@ public class A10C_HSI_View extends AppCompatImageView {
         mLastBackPlateDrawnIsPowerOff = true;
         paintHSIText.setColor(Color.WHITE);
         paintHSIText.setFakeBoldText(true);
-        paintHSIText.setTextSize(60);
         paintHSIText.setDither(true);
         paintWhiteLine.setColor(Color.WHITE);
         paintWhiteLine.setDither(true);
@@ -173,8 +172,8 @@ public class A10C_HSI_View extends AppCompatImageView {
         ScaleUsedCourseArrow(mScaledCompassCardBitmap, arrowToUseBitmap);
         Canvas devLineCanvas = new Canvas();
         devLineCanvas.setBitmap(mScaledCourseNeedleBitmap);
-        float x1 = devLineCanvas.getWidth() / 2f - 7f + mHSICourseDeviation * 20f;
-        float x2 = devLineCanvas.getWidth() / 2f + 7f + mHSICourseDeviation * 20f;
+        float x1 = devLineCanvas.getWidth() / 2f - devLineCanvas.getWidth() * 0.01075268817204301075268817204301f + mHSICourseDeviation * devLineCanvas.getWidth()*0.03072196620583717357910906298003f;
+        float x2 = devLineCanvas.getWidth() / 2f + devLineCanvas.getWidth() * 0.01075268817204301075268817204301f + mHSICourseDeviation * devLineCanvas.getWidth()*0.03072196620583717357910906298003f;
         devLineCanvas.drawRect(x1, devLineCanvas.getHeight() / 2f - 150f, x2, devLineCanvas.getHeight() / 2f + 150f, paintWhiteLine);
         mMatrix.reset();
         mMatrix.postTranslate(-mScaledCourseNeedleBitmap.getWidth() / 2f, -mScaledCourseNeedleBitmap.getHeight() / 2f);
@@ -185,9 +184,12 @@ public class A10C_HSI_View extends AppCompatImageView {
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
+
+        paintHSIText.setTextSize(workPlateBitmap.getHeight() * 0.06048387096774193548387096774194f);
         if (!mHSIPowerIsOff) {
             String rangeString = String.format(Locale.ENGLISH, "%03d", mHSIRangeDigitB * 100 + mHSIRangeDigitC * 10 + mHSIRangeDigitD);
-            localCanvas.drawText(rangeString, pxFromDp(getContext(), 63), pxFromDp(getContext(), 122), paintHSIText);
+            //localCanvas.drawText(rangeString, pxFromDp(getContext(), 63), pxFromDp(getContext(), 122), paintHSIText);
+            localCanvas.drawText(rangeString, workPlateBitmap.getWidth() * 0.10347682119205298013245033112583f, workPlateBitmap.getHeight() * 0.2469758064516129032258064516129f, paintHSIText);
         }
         //Range number etched
         /************************************************************************************************
@@ -204,7 +206,8 @@ public class A10C_HSI_View extends AppCompatImageView {
             }
             //Log.d("absoluteCourse", String.valueOf(absoluteCourse));
             String courseString = String.format(Locale.ENGLISH, "%03d", absoluteCourse);
-            localCanvas.drawText(courseString, pxFromDp(getContext(), 505), pxFromDp(getContext(), 122), paintHSIText);
+            localCanvas.drawText(courseString, workPlateBitmap.getWidth() * 0.82781456953642384105960264900662f, workPlateBitmap.getHeight() * 0.2469758064516129032258064516129f, paintHSIText);
+            //localCanvas.drawText(courseString, pxFromDp(getContext(), 505), pxFromDp(getContext(), 122), paintHSIText);
         }
         //Course number etched
         /************************************************************************************************
@@ -359,7 +362,7 @@ public class A10C_HSI_View extends AppCompatImageView {
         */
         invalidate();
     }
-
+/*
     public static float dpFromPx(final Context context, final float px) {
         return px / context.getResources().getDisplayMetrics().density;
     }
@@ -367,6 +370,6 @@ public class A10C_HSI_View extends AppCompatImageView {
     public static float pxFromDp(final Context context, final float dp) {
         return dp * context.getResources().getDisplayMetrics().density;
     }
-
+*/
 
 }
