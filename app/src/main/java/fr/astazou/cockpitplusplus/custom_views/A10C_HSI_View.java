@@ -43,21 +43,21 @@ public class A10C_HSI_View extends AppCompatImageView {
     private Bitmap mScaledCourseNeedleBitmap = null;
     private Bitmap mHeadingBugBitmap = null;
 
-    private int mHSICourseNeedle = 0;
-    private int mHSIHeading = 0;
+    private float mHSICourseNeedle = 0;
+    private float mHSIHeading = 0;
     private boolean mHSIPowerIsOff = false;
     private boolean mHSIRangeFlagIsOn = false;
     private boolean mHSIOffCourseWarningFlagIsOn = false;
-    private int mHSIBearing1 = 0;
-    private int mHSIBearing2 = 0;
-    private int mHSIHeadingBug = 0;
-    private int mHSIRangeDigitA = 0;
+    private float mHSIBearing1 = 0;
+    private float mHSIBearing2 = 0;
+    private float mHSIHeadingBug = 0;
+    //private int mHSIRangeDigitA = 0;
     private int mHSIRangeDigitB = 0;
     private int mHSIRangeDigitC = 0;
     private int mHSIRangeDigitD = 0;
-    private int mHSICourseCounterA = 0;
-    private int mHSICourseCounterB = 0;
-    private int mHSICourseDeviation = 0;
+    //private int mHSICourseCounterA = 0;
+    //private int mHSICourseCounterB = 0;
+    private float mHSICourseDeviation = 0;
     private boolean mHSIFlyingTowardsStation = false;
     private boolean mHSIFlyingFromStation = false;
     private Paint paintHSIText = new Paint();
@@ -85,7 +85,6 @@ public class A10C_HSI_View extends AppCompatImageView {
         mLastBackPlateDrawnIsPowerOff = true;
         paintHSIText.setColor(Color.WHITE);
         paintHSIText.setFakeBoldText(true);
-        paintHSIText.setTextSize(70);
         paintHSIText.setDither(true);
         paintWhiteLine.setColor(Color.WHITE);
         paintWhiteLine.setDither(true);
@@ -173,9 +172,9 @@ public class A10C_HSI_View extends AppCompatImageView {
         ScaleUsedCourseArrow(mScaledCompassCardBitmap, arrowToUseBitmap);
         Canvas devLineCanvas = new Canvas();
         devLineCanvas.setBitmap(mScaledCourseNeedleBitmap);
-        int x1 = devLineCanvas.getWidth() / 2 - 7 + mHSICourseDeviation * 20;
-        int x2 = devLineCanvas.getWidth() / 2 + 7 + mHSICourseDeviation * 20;
-        devLineCanvas.drawRect(x1, devLineCanvas.getHeight() / 2 - 150, x2, devLineCanvas.getHeight() / 2 + 150, paintWhiteLine);
+        float x1 = devLineCanvas.getWidth() / 2f - devLineCanvas.getWidth() * 0.01075268817204301075268817204301f + mHSICourseDeviation * devLineCanvas.getWidth()*0.03072196620583717357910906298003f;
+        float x2 = devLineCanvas.getWidth() / 2f + devLineCanvas.getWidth() * 0.01075268817204301075268817204301f + mHSICourseDeviation * devLineCanvas.getWidth()*0.03072196620583717357910906298003f;
+        devLineCanvas.drawRect(x1, devLineCanvas.getHeight() / 2f - 150f, x2, devLineCanvas.getHeight() / 2f + 150f, paintWhiteLine);
         mMatrix.reset();
         mMatrix.postTranslate(-mScaledCourseNeedleBitmap.getWidth() / 2f, -mScaledCourseNeedleBitmap.getHeight() / 2f);
         mMatrix.postRotate(mHSICourseNeedle);
@@ -186,19 +185,30 @@ public class A10C_HSI_View extends AppCompatImageView {
          ************************************************************************************************
          ************************************************************************************************/
 
-        String rangeString = String.format(Locale.ENGLISH, "%03d", mHSIRangeDigitB * 100 + mHSIRangeDigitC * 10 + mHSIRangeDigitD);
-        localCanvas.drawText(rangeString, pxFromDp(getContext(),65), pxFromDp(getContext(),117), paintHSIText);
+        paintHSIText.setTextSize(workPlateBitmap.getHeight() * 0.06048387096774193548387096774194f);
+        if (!mHSIPowerIsOff) {
+            String rangeString = String.format(Locale.ENGLISH, "%03d", mHSIRangeDigitB * 100 + mHSIRangeDigitC * 10 + mHSIRangeDigitD);
+            //localCanvas.drawText(rangeString, pxFromDp(getContext(), 63), pxFromDp(getContext(), 122), paintHSIText);
+            localCanvas.drawText(rangeString, workPlateBitmap.getWidth() * 0.10347682119205298013245033112583f, workPlateBitmap.getHeight() * 0.2469758064516129032258064516129f, paintHSIText);
+        }
         //Range number etched
         /************************************************************************************************
          ************************************************************************************************
          ************************************************************************************************/
-
-        int absoluteCourse = 360 - mHSIHeading + mHSICourseNeedle;
-        if (absoluteCourse >= 360) {
-            absoluteCourse = absoluteCourse - 360;
+        if (!mHSIPowerIsOff) {
+            //Log.d("Heading + Needle", String.valueOf(360-mHSIHeading) + " " + String.valueOf(mHSICourseNeedle));
+            int absoluteCourse = 360 - Math.round(mHSIHeading) + Math.round(mHSICourseNeedle);
+            if (absoluteCourse >= 360) {
+                absoluteCourse = absoluteCourse - 360;
+            }
+            if (absoluteCourse < 0) {
+                absoluteCourse = absoluteCourse + 360;
+            }
+            //Log.d("absoluteCourse", String.valueOf(absoluteCourse));
+            String courseString = String.format(Locale.ENGLISH, "%03d", absoluteCourse);
+            localCanvas.drawText(courseString, workPlateBitmap.getWidth() * 0.82781456953642384105960264900662f, workPlateBitmap.getHeight() * 0.2469758064516129032258064516129f, paintHSIText);
+            //localCanvas.drawText(courseString, pxFromDp(getContext(), 505), pxFromDp(getContext(), 122), paintHSIText);
         }
-        String courseString = String.format(Locale.ENGLISH, "%03d", absoluteCourse);
-        localCanvas.drawText(courseString, pxFromDp(getContext(),505), pxFromDp(getContext(),117), paintHSIText);
         //Course number etched
         /************************************************************************************************
          ************************************************************************************************
@@ -251,9 +261,8 @@ public class A10C_HSI_View extends AppCompatImageView {
          ************************************************************************************************/
 
 
-
         Bitmap finalImage = ScaleBitmap(workPlateBitmap, canvas.getWidth(), canvas.getHeight());
-        canvas.drawBitmap(finalImage, canvas.getWidth() / 2 - finalImage.getWidth() / 2, canvas.getHeight() / 2 - finalImage.getHeight() / 2, null);
+        canvas.drawBitmap(finalImage, canvas.getWidth() / 2f - finalImage.getWidth() / 2f, canvas.getHeight() / 2f - finalImage.getHeight() / 2f, null);
     }
 
     public static Bitmap ScaleBitmap(Bitmap bitmap, int width, int height) {
@@ -305,20 +314,26 @@ public class A10C_HSI_View extends AppCompatImageView {
         return Bitmap.createScaledBitmap(bitmapToScale, (int) finalWidth, (int) finalWidth, true);
     }
 
+    @Override
+    public boolean performClick() {
+        super.performClick();
+        return true;
+    }
+
     public void setData(String pData) {
 
         String[] messageArray = pData.split(";");
-        mHSICourseNeedle = Math.round(360 * Float.parseFloat(messageArray[0]));
+        mHSICourseNeedle = 360 * Float.parseFloat(messageArray[0]);
         mHSIPowerIsOff = Float.parseFloat(messageArray[1]) > 0;
         mHSIRangeFlagIsOn = Float.parseFloat(messageArray[2]) > 0;
         mHSIOffCourseWarningFlagIsOn = Float.parseFloat(messageArray[3]) > 0;
-        mHSIHeading = Math.round(360 * Float.parseFloat(messageArray[4]));
-        mHSIBearing1 = Math.round(360 * Float.parseFloat(messageArray[5]) -360);
-        mHSIBearing2 = Math.round(360 * Float.parseFloat(messageArray[6]) -360);
-        mHSIHeadingBug = Math.round(360 * Float.parseFloat(messageArray[7]));
+        mHSIHeading = 360 * Float.parseFloat(messageArray[4]);
+        mHSIBearing1 = 360 * Float.parseFloat(messageArray[5]) - 360;
+        mHSIBearing2 = 360 * Float.parseFloat(messageArray[6]) - 360;
+        mHSIHeadingBug = 360 * Float.parseFloat(messageArray[7]);
         //mHSICourseCounterA
         //mHSICourseCounterB
-        mHSIRangeDigitA = Math.round(10 * Float.parseFloat(messageArray[10]));
+        //mHSIRangeDigitA = Math.round(10 * Float.parseFloat(messageArray[10]));
         mHSIRangeDigitB = Math.round(10 * Float.parseFloat(messageArray[11]));
         mHSIRangeDigitC = Math.round(10 * Float.parseFloat(messageArray[12]));
         mHSIRangeDigitD = Math.round(10 * Float.parseFloat(messageArray[13]));
@@ -347,7 +362,7 @@ public class A10C_HSI_View extends AppCompatImageView {
         */
         invalidate();
     }
-
+/*
     public static float dpFromPx(final Context context, final float px) {
         return px / context.getResources().getDisplayMetrics().density;
     }
@@ -355,6 +370,6 @@ public class A10C_HSI_View extends AppCompatImageView {
     public static float pxFromDp(final Context context, final float dp) {
         return dp * context.getResources().getDisplayMetrics().density;
     }
-
+*/
 
 }
