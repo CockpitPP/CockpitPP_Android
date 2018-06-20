@@ -86,7 +86,7 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
         mMatrix.postRotate(mLeftEngFanSpeed);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(206, 200);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.26963350785340314136125654450262f, workPlateBitmap.getHeight()*0.18115942028985507246376811594203f);
         localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
         //Left FAN speed gauge ready
         /************************************************************************************************
@@ -98,7 +98,7 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
         mMatrix.postRotate(mRightEngFanSpeed);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(570, 200);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.74607329842931937172774869109948f, workPlateBitmap.getHeight()*0.18115942028985507246376811594203f);
         localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
         //Right FAN speed gauge ready
         /************************************************************************************************
@@ -110,7 +110,7 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
         mMatrix.postRotate(mLeftEngFuelFlow);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(200, 555);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.26178010471204188481675392670157f, workPlateBitmap.getHeight()*0.50271739130434782608695652173913f);
         localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
         //Left Fuel flow gauge ready
         /************************************************************************************************
@@ -122,7 +122,7 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
         mMatrix.postRotate(mRightEngFuelFlow);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(564, 555);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.73821989528795811518324607329843f, workPlateBitmap.getHeight()*0.50271739130434782608695652173913f);
         localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
         //Right Fuel flow gauge ready
         /************************************************************************************************
@@ -134,7 +134,7 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
         mMatrix.postRotate(mAPURPM);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(200, 905);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.26178010471204188481675392670157f, workPlateBitmap.getHeight()*0.81974637681159420289855072463768f);
         localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
         //APU RPM (left) gauge ready
         /************************************************************************************************
@@ -146,7 +146,7 @@ public class A10C_EMI_RIGHT_View extends AppCompatImageView {
         mMatrix.postRotate(mAPUTemp);
         //Where it should be drawn
         //Center of the gauge
-        mMatrix.postTranslate(564, 905);
+        mMatrix.postTranslate(workPlateBitmap.getWidth()*0.73821989528795811518324607329843f, workPlateBitmap.getHeight()*0.81974637681159420289855072463768f);
         localCanvas.drawBitmap(mScaledEMIRightBigNeedleBitmap, mMatrix, null);
         //APU RPM (left) gauge ready
         /************************************************************************************************
