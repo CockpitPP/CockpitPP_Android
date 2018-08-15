@@ -77,7 +77,8 @@
     <string name="not_working_step8">8) If the app shows the data from the game but you can\'t send actions to DCS, it means you made a mistake in the Android app</string>
     <string name="not_working_step9">9) If you can send actions to DCS but the app doesn\'t show the data on the panel in the app , it means you made a mistake in the Cockpit++.lua</string>
     <string name="not_working_step10">10) Be sure you are <u>not</u> in the menu, the connection will work only if you are in running game (with no pause)</string>
-    <string name="not_working_step11">11) Join us on our Discord server to help you to install the application: </string>
+    <string name="not_working_step11">11) When you download and extract the files, be sure about their type. Windows could hide the type of the file (the extension .lua), so some people added ".lua" so the name of the files and had \'Cockpit++.lua.lua\' instead of \'Cockpit++.lua\' (same with the Export.lua) </string>
+    <string name="not_working_step12">12) Join us on our Discord server to help you to install the application: </string>
 
     <!-- Contribute -->
     <string name="discord_not_working">https://discord.gg/KbE72PP</string>

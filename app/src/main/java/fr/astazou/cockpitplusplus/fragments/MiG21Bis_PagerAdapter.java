@@ -26,10 +26,10 @@ public class MiG21Bis_PagerAdapter extends FragmentPagerAdapter {
         Fragment fragment;
         switch (position) {
             case 0:
-                fragment = new A10C_VVI();//MiG21Bis_RadarControl();
+                fragment = new MiG21Bis_RadarControl();
                 break;
             default:
-                fragment = new A10C_VVI();//MiG21Bis_RadarControl();
+                fragment = new MiG21Bis_RadarControl();
 
         }
         return fragment;

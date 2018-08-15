@@ -101,6 +101,12 @@
             android:layout_margin="8dp"
             android:text="@string/not_working_step11"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/not_working_step12"/>
+
         <ImageView
             android:id="@+id/discord"
             android:layout_width="match_parent"
