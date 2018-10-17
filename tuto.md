@@ -19,8 +19,13 @@ To illustrate this guide I'm developping the radar management panel of the Mig-2
 - 1 panel = 1 branch for Git
 - panel must keep the good proportion after rotation of the phone.
 
+
+
+
+
+
 ### LUA part
-In this chapter you will work in the Cockpit++.lua to create your interface between DCS and your app, you will learn:
+In this chapter you will work in the ***Cockpit++.lua*** to create your interface between DCS and your app, you will learn:
 - how to identify the panel's commands
 - how to send data to the game
 - how to get data from the game
@@ -28,9 +33,9 @@ In this chapter you will work in the Cockpit++.lua to create your interface betw
 ### Identify the panel in the code and IDs
 First you need to go in the folder of the module: *D:\yourPathToDCS\Mods\aircraft\MIG-21bis\Cockpit*
 We will focus on three files:
-- devices.lua, which contains all the key to get the panel when the game is running, those keys must be added in a new class dedicated for that, here it will be : MiG-21Bis_Devices.java but don't do it for now, Keep these values saved somewhere, you will use them in the "Android part (Interaction)"
-- clickabledata.lua, you will find here the IDs to get values, they will be used in the Cockpit++.lua to transfer their values to the phone
-- command_defs.lua, here you will get the IDs to make an action on an element in the cockpit.
+- ***devices.lua***, which contains all the key to get the panel when the game is running, those keys must be added in a new class dedicated for that, here it will be : ***MiG-21Bis_Devices.java*** but don't do it for now, Keep these values saved somewhere, you will use them in the **Android part (Interaction)**
+- ***clickabledata.lua***, you will find here the IDs to get values, they will be used in the ***Cockpit++.lua*** to transfer their values to the phone
+- ***command_defs.lua***, here you will get the IDs to make an action on an element in the cockpit.
 
 ### Send actions (data) to DCS
 You identified where to find the IDs to interact with DCS, let's now find the exact IDs you need for the panel you are developing.
@@ -60,8 +65,8 @@ Type : 1
 Value : 1 (or 0 if it is already on 1)
 ```
 At this moment you can also play with other buttons to get all the IDs you will need for the panel.
-For the Mig-21's radar management panel I will need 3094(on/prep/off button), 3095(low button) and 3096(Beam button)
-Keep these values saved somewhere, you will use them in the "Android part (Interaction)"
+For the Mig-21's radar management panel I will need **3094(on/prep/off button)**, **3095(low button)** and **3096(Beam button)**
+Keep these values saved somewhere, you will use them in the **Android part (Interaction)**
 
 ### get data from the game
 For this part we will work in the .lua, I will add the block after the other blocks for other modules
@@ -86,7 +91,7 @@ elements["PNT_206"] = multiposition_switch_limited(_("Low Altitude Off/Comp/On")
 elements["PNT_207"] = default_2_position_tumb(_("Locked Beam On/Off"),devices.RADAR, device_commands.RADARfixBeam,207)
 ```
 so ID of my buttons to get their positions will be 205, 206 and 207.
-so... let's add them in the Cockpit++.lua:
+so... let's add them in the ***Cockpit++.lua***:
 ```lua
 msgOut = msgOut..MainPanel:get_argument_value(205) ..";".. MainPanel:get_argument_value(206) ..";".. MainPanel:get_argument_value(207) ..",".." \n"
 ```
@@ -105,7 +110,7 @@ log_file:write("\n")
 log_file:write("ID-")
 log_file:write(list_indication(ID))
 ```
-After you need to start the game (the LUA can be edited and saved only when the game is off, at least in the menu), select a mission, start it, remove the pause, select your plane, manipulate your buttons some seconds and you can already leave the mission and go back to the menu. You will see your logger will be soooo full! For that you need to go in "C:\Users\yourWonderfulNickName\Saved Games\DCS\Logs\Cockpit++_Logger.log", open it and find which value are moving properly according your actions in the cockpit.
+After you need to start the game (the LUA can be edited and saved only when the game is off, at least in the menu), select a mission, start it, remove the pause, select your plane, manipulate your buttons some seconds and you can already leave the mission and go back to the menu. You will see your logger will be soooo full! For that you need to go in *C:\Users\yourWonderfulNickName\Saved Games\DCS\Logs\Cockpit++_Logger.log*, open it and find which value are moving properly according your actions in the cockpit.
 Sometimes the IDs are not exactly the one you expect, so you will have to repeat that until you identified every IDs you need to for your panel.
 Remember to remove the Log_file when you finish, or you have a problem of memory and DCS will crash (I know what I'm talking about...)
 
@@ -219,7 +224,7 @@ To finish, just add the proper colors of the module (cockpit's theme), the prope
 
 #### Access to this activity
 (still pointless if you the activity was already existing)
-Before testing if it is working, we need to go in activity_menu.xml to change the color of the button (to show it is not disabled), and after we need to go in Menu_Activity.java, to change that:
+Before testing if it is working, we need to go in ***activity_menu.xml*** to change the color of the button (to show it is not disabled), and after we need to go in ***Menu_Activity.java***, to change that:
 ```java
 mig21.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,7 +242,7 @@ mig21.setOnClickListener(new View.OnClickListener() {
         });
 ```
 
-Also remember to go in Module_Activity.java to add you new activity, it will make auto-redirection if the user is changing module in the game ;)
+Also remember to go in ***Module_Activity.java*** to add you new activity, it will make auto-redirection if the user is changing module in the game ;)
 For the MiG-21Bis I need to put:
 ```java
 case "MiG-21Bis":
@@ -252,8 +257,10 @@ Then you can run your app', you should be able to click on the button and access
 Now you have your Activity, your PageAdapter, let's create the Fragment now!
 The fragment can be resized/managed/moved as we want, that's why it's quite important to use it.
 
-I copy past an existing fragment and I do some cleaning in it: 
+I copy past an existing fragment and I do some cleaning in it:
+```java
 public class ModuleName_RadarControl extends Fragment
+```
 Basic very important method to not delete are : 
 - ModuleName_RadarControl()
 - onCreate(Bundle savedInstanceState)
@@ -265,11 +272,11 @@ Basic very important method to not delete are :
 - resizeView()
 - onDestroy()
 
-I invite you to check to code directly to understand who is working this class for the MiG21Bis_RadarControl fragment. I added directly comments ;)
+I invite you to check to code directly to understand who is working this class for the **MiG21Bis_RadarControl** fragment. I added directly comments ;)
 
 
-If you create a panel for an existing module, the ModuleName_Commands is probably already existing, so you don't need to create it.
-But if you create a panel for a new module, you need to create the ModuleName_Commands (Mig21Bis_Commands for the Mig21).
+If you create a panel for an existing module, the **ModuleName_Commands** is probably already existing, so you don't need to create it.
+But if you create a panel for a new module, you need to create the **ModuleName_Commands** (**Mig21Bis_Commands** for the Mig21).
 
 
 
@@ -281,8 +288,8 @@ One screenshot will show all the panel and will be the background of you panel.
 All the rest will be pieces of screenshots we will place over the background view to show to the user the position of the buttons.
 
 So how to make screenshots?
-Just follow this post: *** [https://forums.eagle.ru/showpost.php?p=3224879&postcount=2](https://forums.eagle.ru/showpost.php?p=3224879&postcount=2)  ***
-You will ask me "why don't do screens in the game?", because it's not so easy to have the exact position of the camera in front of the panel, and it's easier to manage button positions starting animations.
+Just follow this post: [https://forums.eagle.ru/showpost.php?p=3224879&postcount=2](https://forums.eagle.ru/showpost.php?p=3224879&postcount=2) maybe now you can use ***ModelViewer2.exe*** instead of ***ModelViewer.exe***
+You will ask me "*why don't do screens in the game?*", because it's not so easy to have the exact position of the camera in front of the panel, and it's easier to manage button positions starting animations.
 
 So for the Mig21, I make pictures of the radar panel of the Mig21
 
@@ -300,9 +307,9 @@ To send data to DCS, you need to add an OnClickListener on your buttons in the f
 ```java
 sendCommand(ModuleName_Commands.buttonExample,"1");
 ```
-For that, you need to register your commands in ModuleName_Commands.java to send to DCS. In the part *Send actions (data) to DCS* I told you Keep these values saved somewhere, you will use them in the "Android part (Interaction)"", here we are :
+For that, you need to register your commands in ***ModuleName_Commands.java*** to send to DCS. In the part *Send actions (data) to DCS* I told you Keep these values saved somewhere, you will use them in the **Android part (Interaction)**, here we are :
 
-I will add these values in the the class MiG-21Bis_Commands.java I created for that :
+I will add these values in the the class ***MiG-21Bis_Commands.java*** I created for that :
 ```java
     radarStatus(3094, MiG-21Bis_Devices.UUA, TypeButtonCodes.Simple)
     radarAltitude(3095, MiG-21Bis_Devices.UUA, TypeButtonCodes.Simple)
@@ -313,7 +320,7 @@ You will probable wonder what is "*ModuleName_Devices*".
 
 So for the Mig21 I will create : **MiG21Bis_Devices.java**, which is used to stock all the device code we have found in **devices.lua** of the module.
 
-For the TypeButtonCodes, I will let you choose the good one according to how it working your button in DCS.
+For the **TypeButtonCodes**, I will let you choose the good one according to how it working your button in DCS.
 
 Then you can add in your listener :
 ```java
