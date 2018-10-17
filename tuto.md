@@ -28,14 +28,14 @@ In this chapter you will work in the ***Cockpit++.lua*** to create your interfac
 - how to send data to the game
 - how to get data from the game
 
-#### Identify the panel in the code and IDs
+### Identify the panel in the code and IDs
 First you need to go in the folder of the module: *D:\yourPathToDCS\Mods\aircraft\MIG-21bis\Cockpit*
 We will focus on three files:
 - ***devices.lua***, which contains all the key to get the panel when the game is running, those keys must be added in a new class dedicated for that, here it will be : ***MiG-21Bis_Devices.java*** but don't do it for now, Keep these values saved somewhere, you will use them in the **Android part (Interaction)**
 - ***clickabledata.lua***, you will find here the IDs to get values, they will be used in the ***Cockpit++.lua*** to transfer their values to the phone
 - ***command_defs.lua***, here you will get the IDs to make an action on an element in the cockpit.
 
-#### Send actions (data) to DCS
+### Send actions (data) to DCS
 You identified where to find the IDs to interact with DCS, let's now find the exact IDs you need for the panel you are developing.
 
 In my example, I need to get the IDs for the radar panel, so I search radar's IDs in ***command_defs.lua***, I search "radar" and find:
@@ -73,7 +73,7 @@ For the Mig-21's radar management panel I will need **3094(on/prep/off button)**
 
 Keep these values saved somewhere, you will use them in the **Android part (Interaction)**
 
-#### get data from the game
+### get data from the game
 For this part we will work in the .lua, I will add the block after the other blocks for other modules
 ```lua
 elseif currentAircraft == "MiG-21Bis" and GetDevice(0) ~= 0 then
@@ -141,7 +141,7 @@ You cloned the Android project and you already created your branch for your pane
 - You will edit the menu if necessary to access to this Activity
 - You will create the Fragment which contains the panel
 
-#### Create activity
+### Create activity
 This part is pointless if an activity is already existing for the module, remember, 1 activity = 1 module ;)
 
 If it is for a new module, nothing very big here, you copy/paste an existing activity and modify(rightClick => refactor => rename) to have something neat for your module:
@@ -240,7 +240,7 @@ Remember to declare the activity in the manifest:
 To finish, just add the proper colors of the module (cockpit's theme), the proper Strings and... 
 
 
-#### Access to this activity
+### Access to this activity
 (again pointless if you the activity was already existing)
 
 Before testing if it is working, we need to go in ***activity_menu.xml*** to change the color of the button (to show it is not disabled), and after we need to go in ***Menu_Activity.java***, to change that:
@@ -273,7 +273,7 @@ case "MiG-21Bis":
 Then you can run your app', you should be able to click on the button and access to your activity (with a randon panel for now, but just needed to check the new activity is working ;) ).
 
 
-#### Create the Fragment of your panel
+### Create the Fragment of your panel
 Now you have your Activity, your PageAdapter, let's create the Fragment now!
 
 The fragment can be resized/managed/moved as we want, that's why it's quite important to use it.
