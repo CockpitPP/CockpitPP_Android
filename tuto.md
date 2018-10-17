@@ -21,23 +21,20 @@ To illustrate this guide I'm developping the radar management panel of the Mig-2
 
 
 
-
-
-
-### LUA part
+## LUA part
 In this chapter you will work in the ***Cockpit++.lua*** to create your interface between DCS and your app, you will learn:
 - how to identify the panel's commands
 - how to send data to the game
 - how to get data from the game
 
-### Identify the panel in the code and IDs
+## Identify the panel in the code and IDs
 First you need to go in the folder of the module: *D:\yourPathToDCS\Mods\aircraft\MIG-21bis\Cockpit*
 We will focus on three files:
 - ***devices.lua***, which contains all the key to get the panel when the game is running, those keys must be added in a new class dedicated for that, here it will be : ***MiG-21Bis_Devices.java*** but don't do it for now, Keep these values saved somewhere, you will use them in the **Android part (Interaction)**
 - ***clickabledata.lua***, you will find here the IDs to get values, they will be used in the ***Cockpit++.lua*** to transfer their values to the phone
 - ***command_defs.lua***, here you will get the IDs to make an action on an element in the cockpit.
 
-### Send actions (data) to DCS
+## Send actions (data) to DCS
 You identified where to find the IDs to interact with DCS, let's now find the exact IDs you need for the panel you are developing.
 In my example, I need to get the IDs for the radar panel, so I search radar's IDs in ***command_defs.lua***, I search "radar" and find:
 ```lua
@@ -68,7 +65,7 @@ At this moment you can also play with other buttons to get all the IDs you will 
 For the Mig-21's radar management panel I will need **3094(on/prep/off button)**, **3095(low button)** and **3096(Beam button)**
 Keep these values saved somewhere, you will use them in the **Android part (Interaction)**
 
-### get data from the game
+## get data from the game
 For this part we will work in the .lua, I will add the block after the other blocks for other modules
 ```lua
 elseif currentAircraft == "MiG-21Bis" and GetDevice(0) ~= 0 then
@@ -125,7 +122,7 @@ Now your DCS is sending on the network the data related to the information of th
 
 
 
-### Android part (New panel)
+## Android part (New panel)
 You cloned the Android project and you already created your branch for your panel, what now?
 - You will create the Activity of the plane if it is not existing (With the PageViewer)
 - You will edit the menu if necessary to access to this Activity
@@ -280,7 +277,7 @@ But if you create a panel for a new module, you need to create the **ModuleName_
 
 
 
-### Android part (View)
+## Android part (View)
 
 Welcome in the longest part, the view!
 Are we will make screenshots of the panel with buttons in every positions.
@@ -289,19 +286,20 @@ All the rest will be pieces of screenshots we will place over the background vie
 
 So how to make screenshots?
 Just follow this post: [https://forums.eagle.ru/showpost.php?p=3224879&postcount=2](https://forums.eagle.ru/showpost.php?p=3224879&postcount=2) maybe now you can use ***ModelViewer2.exe*** instead of ***ModelViewer.exe***
+
 You will ask me "*why don't do screens in the game?*", because it's not so easy to have the exact position of the camera in front of the panel, and it's easier to manage button positions starting animations.
 
 So for the Mig21, I make pictures of the radar panel of the Mig21
 
 
 
-### Android part (Controller)
+## Android part (Controller)
 
 
 
 
 
-### Android part (Interaction)
+## Android part (Interaction)
 
 To send data to DCS, you need to add an OnClickListener on your buttons in the fragment, then you need to call :
 ```java
