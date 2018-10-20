@@ -119,6 +119,9 @@
     <string name="a10c" translatable="false">A-10C</string>
     <string name="a10c_vii">VVI</string>
     <string name="a10c_hsi">HSI</string>
+    <string name="a10c_flight_gauges">Flight gauges</string>
+    <string name="a10c_emi_left">Engine monitoring left panel</string>
+    <string name="a10c_emi_right">Engine monitoring right panel</string>
 
     <!-- MiG-21Bis -->
     <string name="mig21bis" translatable="false">MiG-21Bis</string>

@@ -15,6 +15,8 @@ public class BroadcastKeys {
     /** Broadcast keys for the A-10C **/
     public static final String A10C_VVI = "A10C_vvi";
     public static final String A10C_HSI = "A10C_hsi";
+    public static final String A10C_EMI_LEFT = "A10C_emi_left";
+    public static final String A10C_EMI_RIGHT = "A10C_emi_right";
 
     /** Broadcast keys for the Mirage 2000C **/
     public static final String M2KC_UR = "M2KC_ur";

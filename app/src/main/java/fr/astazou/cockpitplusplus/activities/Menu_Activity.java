@@ -183,10 +183,40 @@ public class Menu_Activity extends Activity {
         a10c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // custom dialog
+                final Dialog dialog = new Dialog(Menu_Activity.this);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.mode_chooser);
+
+                LinearLayout btn_tablet = (LinearLayout) dialog.findViewById(R.id.btn_tablet);
+                btn_tablet.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        startActivity(A10C_Activity_Tablet.class);
+                    }
+                });
+
+                LinearLayout btn_phone = (LinearLayout) dialog.findViewById(R.id.btn_phone);
+                btn_phone.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        startActivity(A10C_Activity.class);
+                    }
+                });
+
+                dialog.show();
+            }
+        });
+        /*a10c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(Menu_Activity.this, A10C_Activity.class);
                 startActivity(intent);
             }
-        });
+        });*/
         huey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
