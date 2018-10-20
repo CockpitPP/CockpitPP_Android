@@ -720,6 +720,7 @@ Then the command will be sent in game when you will press the button on your pho
 We are no at the end of this tuto, I just wanted to add:
 - if the examples of sources aren't enought, read the source code for this panel and other panels, here you have only samples, not full classes ;)
 - if you find a mistake, come to tell me on Discord, I will correct that
+- this is not because I'm making less panels that I cancel the project, I will stay available to help you and publish contributions of dev' :)
 - to finish, thank you for reading me and for your contribution for Cockpit++ and indirectly to DCS
 
 ***Asta'***
