@@ -266,10 +266,21 @@ public class A10C_EMI_LEFT_View extends AppCompatImageView {
         mRightEngCoreSpeed = 360 * Float.parseFloat(messageArray[3]);
         mLeftEngOilPressure = 270 * Float.parseFloat(messageArray[4]) + 135f;
         mRightEngOilPressure = 270 * Float.parseFloat(messageArray[5]) + 135f;
-        mLeftTempTenth = 255* Float.parseFloat(messageArray[6]) + 129f;
-        mLeftTemp = 360 * Float.parseFloat(messageArray[7]);
-        mRightTempTenth = 255* Float.parseFloat(messageArray[8]) + 129f;
-        mRightTemp = 360 * Float.parseFloat(messageArray[9]);
+        if(messageArray.length > 6) {
+            mLeftTempTenth = 255* Float.parseFloat(messageArray[6]) + 129f;
+        }
+        if(messageArray.length > 7) {
+            mLeftTemp = 360 * Float.parseFloat(messageArray[7]);
+        }
+
+        if(messageArray.length > 8) {
+            mRightTempTenth = 255* Float.parseFloat(messageArray[8]) + 129f;
+        }
+
+        if(messageArray.length > 9) {
+            mRightTemp = 360 * Float.parseFloat(messageArray[9]);
+        }
+
         /*
             EMI left panel gauges table :
             [0] = engine_left_core_speed_tenth

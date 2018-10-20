@@ -40,7 +40,7 @@
                 android:orientation="vertical"
                 android:weightSum="10">
 
-                <View
+                <Button
                     android:id="@+id/a10_hsi_dials_touch_view"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -58,14 +58,20 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@android:color/transparent" />
+                        android:background="@drawable/circle_button"  />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"/>
+
 
                     <Button
                         android:id="@+id/a10_hsi_course_set_button"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@android:color/transparent" />
+                        android:background="@drawable/circle_button" />
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>

@@ -13,33 +13,38 @@
         android:weightSum="10"
         android:background="@android:color/black">
 
-        <View
+        <Button
             android:id="@+id/a10_hsi_dials_touch_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="7.5"
-            android:background="@android:color/holo_red_dark"/>
+            android:background="@drawable/circle_button" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2.5"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="6">
 
             <Button
                 android:id="@+id/a10_hsi_heading_set_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/holo_blue_dark" />
+                android:background="@drawable/circle_button" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"/>
 
             <Button
                 android:id="@+id/a10_hsi_course_set_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/holo_blue_bright" />
+                android:background="@drawable/circle_button" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

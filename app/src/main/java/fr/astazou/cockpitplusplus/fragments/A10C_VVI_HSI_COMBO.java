@@ -30,7 +30,7 @@ public class A10C_VVI_HSI_COMBO extends Fragment {
         HEADINGSET, COURSESET
     }
 
-    private View mHSITouchView;
+    private Button mHSITouchView;
     private Button mHSIHeadingSetButton;
     private Button mHSICourseSetButton;
     private long mLastHSITap = System.currentTimeMillis();
@@ -85,7 +85,7 @@ public class A10C_VVI_HSI_COMBO extends Fragment {
         Fragment hsi = new A10C_HSI();
         transaction.replace(R.id.a10_hsi_combo, hsi).commit();
 
-        mHSITouchView = (View) subview.findViewById(R.id.a10_hsi_dials_touch_view);
+        mHSITouchView = (Button) subview.findViewById(R.id.a10_hsi_dials_touch_view);
         mHSIHeadingSetButton = (Button) subview.findViewById(R.id.a10_hsi_heading_set_button);
         mHSICourseSetButton = (Button) subview.findViewById(R.id.a10_hsi_course_set_button);
         Button.OnTouchListener hsiHeadingSetOnTouchListener = new Button.OnTouchListener() {

@@ -91,7 +91,7 @@
     <string name="about_thanks_photo">Background image is from <a href="https://pixabay.com/fr/ciel-nuage-coucher-de-soleil-gris-1054733/">pixabay.com/fr/ciel-nuage-coucher-de-soleil-gris-1054733/</a> </string>
     <string name="about_thanks_font">Font are from <a href="http://www.dafont.com/fr/digital-display-tfb.font">http://www.dafont.com/fr/digital-display-tfb.font</a> and from  <a href="http://www.dafont.com/fr/hemi-head.font">http://www.dafont.com/fr/hemi-head.font</a> </string>
     <string name="about_thanks_Huertix">Special thanks to <b><i>Huertix</i></b>, his app for the <b><i>A-10C Warthog</i></b> motivated me to developp Cockpit++, here is his app <a href="https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta">https://play.google.com/store/apps/details?id=com.dev.huertix.throttle_dcs_beta</a> </string>
-    <string name="about_contributors">Also special thanks to contributors of this project:\n- <b><i>ArthurDCS</i></b> for the VVI and the HSI for the A-10C \n- **Your nickname if you contribute :D** </string>
+    <string name="about_contributors">Also special thanks to contributors of this project:\n- <b><i>ArthurDCS</i></b> for the VVI,the HSI and the EMIs for the A-10C \n- **Your nickname if you contribute :D** </string>
     <!-- \n- <b><i>K4ngoo</i></b> for the radio panel of the M2kC! <a href="https://github.com/AlexFaraino/">https://github.com/AlexFaraino/</a>  -->
     <string name="about_github">Do you want to take part of the project? (translation?new panel?new plateform?&#8230; ?) Feel free to contribute here <a href="https://github.com/CockpitPP/">https://github.com/CockpitPP/</a> (but documentation will come later) or come talk with us on our Discord server: </string>
 
@@ -101,7 +101,7 @@
     <string name="changelog_2">09&#8211;14&#8211;2017:\n• INS for Mirage 2000C by Razbam\n• INS Knobs for Mirage 2000C by Razbam\n• Armament Panel for the Huey by BelSimTek\n</string>
     <string name="changelog_3">11&#8211;16&#8211;2017:\n• Better stability for Android 7 users\n• Fix bug of freeze after ejection\n• User can\'t anymore enter text in ports\n• Added explanations in the installation guide\n</string>
     <string name="changelog_4">12&#8211;15&#8211;2017:\n• Nozzle for AV-8B n/a Harrier by Razbam\n• Tablet mod to have several panels\n• The application is now open-sourced! (documentation will come soon)\n• Discord server opened for anyone\n</string>
-    <string name="changelog_5">06&#8211;10&#8211;2018:\n• VVI for the A-10C by Eagle Dynamics\n• HSI for the A-10C by Eagle Dynamics\n• Radar management panel for the Mig-21Bis by Leatherneck Simulations \n• The application has now a documentation to learn how to contribute(Github)\n</string>
+    <string name="changelog_5">06&#8211;10&#8211;2018:\n• VVI for the A-10C by Eagle Dynamics\n• HSI for the A-10C by Eagle Dynamics\n• EMIs for the A-10C by Eagle Dynamics\n• Radar management panel for the Mig-21Bis by Leatherneck Simulations\n• The application has now a documentation to learn how to make a panel\n• App is taking now in fullscreen mod\n</string>
 
     <!-- FAQ -->
     <string name="faq">Frequently Asked Question</string>

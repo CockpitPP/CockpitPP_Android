@@ -42,7 +42,7 @@ public class A10C_HSI extends Fragment {
         HEADINGSET, COURSESET
     }
 
-    private View mHSITouchView;
+    private Button mHSITouchView;
     private Button mHSIHeadingSetButton;
     private Button mHSICourseSetButton;
     private long mLastHSITap = System.currentTimeMillis();
@@ -93,13 +93,11 @@ public class A10C_HSI extends Fragment {
         mContainerLinearLayout = (FrameLayout) rootView.findViewById(R.id.a_10_hsi_containerLinearLayout);
         mA10CHSI_view = new A10C_HSI_View(getActivity());
         mContainerLinearLayout.addView(mA10CHSI_view);
-        mHSITouchView = (View) rootView.findViewById(R.id.a10_hsi_dials_touch_view);
+        mHSITouchView = (Button) rootView.findViewById(R.id.a10_hsi_dials_touch_view);
         mHSIHeadingSetButton = (Button) rootView.findViewById(R.id.a10_hsi_heading_set_button);
         mHSICourseSetButton = (Button) rootView.findViewById(R.id.a10_hsi_course_set_button);
 
         mHSITouchView.bringToFront();
-        mHSIHeadingSetButton.bringToFront();
-        mHSICourseSetButton.bringToFront();
         mContainerLinearLayout.requestLayout();
 
         /*

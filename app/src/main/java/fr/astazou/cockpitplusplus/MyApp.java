@@ -10,7 +10,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  */
 public class MyApp extends Application{
 
-    public static String LUA_VERSION = "3";
+    public static String LUA_VERSION = "4";
 
     @Override
     public void onCreate() {
