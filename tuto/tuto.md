@@ -329,6 +329,8 @@ This first image is the "default background" image of the panel, the other image
 
 for now, we have to cut the images, and make them to have to exact same position, and yes, I use the layers for that ;)
 when I setted the positions, I export the background as jpg, I have now ***mig21bis_radarpanel_bkg.jpg*** that I will put in *..\CockpitPP\app\src\main\res\drawable-mdpi*
+
+I will also notice I removed the useless border to have a perfect and logical fit in the screen
 ![lights](Mig21Bis_radarPanel_bkg.jpg)
 I will call it in the ***fragment_mig21bis_radarcontrol.xml***
 ```xml
@@ -365,6 +367,126 @@ I will call it in the ***fragment_mig21bis_radarcontrol.xml***
 </FrameLayout>
 ```
 
+if you start your app, you will see that:
+![background in app](device-2018-10-20-140553.png)
+
+now will add the layout/cells over the background, in the "container" part, this container will handle buttons and lights. It will be very important with these layouts to to keep the same proportions, what ever the rotation of the screen or the size of the screen.
+
+It means you have to use **weight** attribute or similar.
+
+Doing that, I strongly recommend to add colors at each layout, why? Because it will be very helpful for you to cut exactly the pieces of images you will need for the different positions of the buttons/lights.
+
+It gives me something like that:
+![defaultBackgroundWithCellsToCut](device-2018-10-20-142933.png)
+
+Here is the code to show how I did:
+```xml
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix"
+    tools:context="fr.astazou.cockpitplusplus.fragments.UH1H_Armament">
+
+    <ImageView
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/mig21bis_radarpanel_bkg"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:contentDescription="@null"/>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="#5228"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#5822">
+                <!-- TODO : light images-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#5282">
+                <!-- TODO : light images-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#5228">
+                <!-- TODO : light images-->
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="#5282"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#5228">
+                <!-- TODO : buttons images-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#5822">
+                <!-- TODO : buttons images-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#5282">
+                <!-- TODO : buttons images-->
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+```
+
+Now I'm making a screenshoots of this view, I import it in a new layer (in photoshop or whatever else you want), it gives me the limits the cut the the other images for the differents positions of the buttons/lights.
+
+So now I have that:
+![assets](assets.PNG)
+**Remember for the name in ressources in Android: no uppercase and no special character!**
+
+it means we add theses images in the ***fragment_mig21bis_radarcontrol.xml***
 
 
 ## Android part (Controller)
