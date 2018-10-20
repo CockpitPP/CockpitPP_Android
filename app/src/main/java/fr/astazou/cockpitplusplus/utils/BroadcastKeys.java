@@ -36,7 +36,7 @@ public class BroadcastKeys {
     public static final String UH1H_ARMAMENT = "UH1H_armament_panel";
 
     /** Broadcast keys for the UH-1H Huey **/
-    public static final String MIG21BIS = "MIG21BIS_radar_panel";
+    public static final String MIG21BIS_RADARPANEL = "MIG21BIS_radar_panel";
 
     /** Broadcast keys for the AV-8B n/a Harrier **/
     public static final String AV8BNA_NOZZLE = "AV8BNA_nozzle";

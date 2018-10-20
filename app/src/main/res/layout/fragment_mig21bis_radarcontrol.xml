@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/uh1h_armament_panel_bkg"
+        android:src="@drawable/mig21bis_radarpanel_bkg"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:contentDescription="@null"/>
@@ -27,190 +27,103 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.7"
-            android:weightSum="6"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3">
-
-            </View>
-            
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.7">
-
+                android:layout_weight="1">
                 <ImageView
-                    android:id="@+id/armament_cal_selector_middle"
+                    android:id="@+id/mig21_radarpanel_light1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_panel_cal_selector_middle"
+                    android:visibility="gone"
+                    android:adjustViewBounds="true"
                     android:contentDescription="@null"
-                    android:scaleType="fitXY"
-                    android:visibility="invisible"/>
-
-                <ImageView
-                    android:id="@+id/armament_cal_selector_up"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_panel_cal_selector_up"
-                    android:contentDescription="@null"
-                    android:scaleType="fitXY"
-                    android:visibility="invisible"/>
-
-                <Button
-                    android:id="@+id/armament_cal_selector"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/circle_button_discret"/>
-
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_light1"/>
             </RelativeLayout>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.59">
-
-            </View>
-
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.32">
-
-                <LinearLayout
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_light2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:weightSum="3"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <View
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.23"/>
-                    <ImageView
-                        android:id="@+id/armament_rkt_number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1.2"
-                        android:src="@drawable/uh1h_armament_panel_rkt_selector"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="@null"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-                    <Button
-                        android:id="@+id/armament_rkt_number_minus"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/circle_button"/>
-
-                    <Button
-                        android:id="@+id/armament_rkt_number_plus"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/circle_button"/>
-                </LinearLayout>
-
+                    android:visibility="gone"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_light2"/>
             </RelativeLayout>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.57">
-
-            </View>
-
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.88"
-                android:gravity="center_horizontal">
-
-                <LinearLayout
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_light3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    android:weightSum="2">
-
-                    <View
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.93"/>
-
-                    <ImageView
-                        android:id="@+id/armament_rkt_reset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.95"
-                        android:src="@drawable/uh1h_armament_panel_rkt_reset"
-                        android:adjustViewBounds="true"
-                        android:visibility="gone"
-                        android:contentDescription="@null"/>
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/armament_rkt_reset_btn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/circle_button_discret"/>
-
+                    android:visibility="gone"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_light3"/>
             </RelativeLayout>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2">
+        </LinearLayout>
 
-            </View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3">
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.88">
+                android:layout_weight="1">
 
+                <!-- One of the position we could show -->
                 <ImageView
-                    android:id="@+id/armament_jettison_middle"
+                    android:id="@+id/mig21_radarpanel_button1middle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_jetti_middle"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button1_m"
                     android:contentDescription="@null"
                     android:scaleType="fitXY"
-                    android:visibility="invisible"/>
+                    android:visibility="gone"/>
 
+                <!-- One of the position we could show -->
                 <ImageView
-                    android:id="@+id/armament_jettison_up"
+                    android:id="@+id/mig21_radarpanel_button1up"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_jetti_up"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button1_u"
                     android:contentDescription="@null"
                     android:scaleType="fitXY"
-                    android:visibility="invisible"/>
+                    android:visibility="gone"/>
 
+                <!-- Over the button, to show to the pilot he can click, there is buttons with a white round background, fancy ! ^^ -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:weightSum="2"
                     android:orientation="vertical">
                     <Button
-                        android:id="@+id/armament_jettison_plus"
+                        android:id="@+id/mig21_radarpanel_button1plus"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle_button"/>
                     <Button
-                        android:id="@+id/armament_jettison_minus"
+                        android:id="@+id/mig21_radarpanel_button1minus"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -218,147 +131,75 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <View
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.56">
+                android:layout_weight="1">
 
-            </View>
+                <!-- One of the position we could show -->
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_button2middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button2_m"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
 
-        </LinearLayout>
+                <!-- One of the position we could show -->
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_button2up"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button2_u"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="10">
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.7">
-
-            </View>
+                <!-- Over the button, to show to the pilot he can click, there is buttons with a white round background, fancy ! ^^ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/mig21_radarpanel_button2plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/circle_button"/>
+                    <Button
+                        android:id="@+id/mig21_radarpanel_button2minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/circle_button"/>
+                </LinearLayout>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.5">
+                android:layout_weight="1">
 
+                <!-- One of the position we could show -->
                 <ImageView
-                    android:id="@+id/armament_selector_right"
+                    android:id="@+id/mig21_radarpanel_button3up"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_panel_selector_right"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button3_u"
                     android:contentDescription="@null"
                     android:scaleType="fitXY"
-                    android:visibility="invisible"/>
+                    android:visibility="gone"/>
 
-                <ImageView
-                    android:id="@+id/armament_selector_all"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_panel_selector_all"
-                    android:contentDescription="@null"
-                    android:scaleType="fitXY"
-                    android:visibility="invisible"/>
-
+                <!-- Over the button, to show to the pilot he can click, there is buttons with a white round background, fancy ! ^^ -->
                 <Button
-                    android:id="@+id/armament_selector"
+                    android:id="@+id/mig21_radarpanel_button3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/circle_button_discret"/>
+                    android:layout_height="match_parent"/>
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.85">
-
-            </View>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:orientation="vertical"
-                android:weightSum="3">
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="0.1"/>
-                <ImageView
-                    android:id="@+id/red_light"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/uh1h_armament_panel_red_light"
-                    android:visibility="invisible"
-                    android:contentDescription="@null"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="0.05"/>
-                <ImageView
-                    android:id="@+id/green_light"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/uh1h_armament_panel_green_light"
-                    android:visibility="invisible"
-                    android:contentDescription="@null"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.7">
-
-            </View>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5">
-
-                <ImageView
-                    android:id="@+id/armament_selector_armed"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_panel_selector_armed"
-                    android:contentDescription="@null"
-                    android:scaleType="fitXY"
-                    android:visibility="invisible"/>
-
-                <ImageView
-                    android:id="@+id/armament_selector_safe"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/uh1h_armament_panel_selector_safe"
-                    android:contentDescription="@null"
-                    android:scaleType="fitXY"
-                    android:visibility="invisible"/>
-
-                <Button
-                    android:id="@+id/armament_selector_safety"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/circle_button_discret"/>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.95">
-
-            </View>
         </LinearLayout>
 
     </LinearLayout>
