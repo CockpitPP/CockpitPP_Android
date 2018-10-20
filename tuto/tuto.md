@@ -40,9 +40,9 @@ You identified where to find the IDs to interact with DCS, let's now find the ex
 
 In my example, I need to get the IDs for the radar panel, so I search radar's IDs in ***command_defs.lua***, I search "radar" and find:
 ```lua
-	RADARon = start_command + 94;
-	RADARlowAlt = start_command + 95;
-	RADARfixBeam = start_command + 96;
+RADARon = start_command + 94;
+RADARlowAlt = start_command + 95;
+RADARfixBeam = start_command + 96;
 ```
 **start_command** being a constant = 3000.
 I also need to find the correct ID of the panel, I will find that in ***devices.lua***.
@@ -716,29 +716,10 @@ Just do the same for other buttons
 
 Then the command will be sent in game when you will press the button on your phone :)
 
-##The word of the end
+## The word of the end
 We are no at the end of this tuto, I just wanted to add:
 - if the examples of sources aren't enought, read the source code for this panel and other panels, here you have only samples, not full classes ;)
 - if you find a mistake, come to tell me on Discord, I will correct that
 - to finish, thank you for reading me and for your contribution for Cockpit++ and indirectly to DCS
 
 ***Asta'***
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
