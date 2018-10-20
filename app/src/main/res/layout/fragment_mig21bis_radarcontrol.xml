@@ -29,31 +29,51 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:background="#5228"
             android:weightSum="3">
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#5822">
-                <!-- TODO : light images-->
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_light1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_light1"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#5282">
-                <!-- TODO : light images-->
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_light2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_light2"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#5228">
-                <!-- TODO : light images-->
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_light3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_light3"/>
             </RelativeLayout>
 
         </LinearLayout>
@@ -63,31 +83,121 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:background="#5282"
             android:weightSum="3">
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#5228">
-                <!-- TODO : buttons images-->
+                android:layout_weight="1">
+
+                <!-- One of the position we could show -->
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_button1middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button1_m"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
+
+                <!-- One of the position we could show -->
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_button1up"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button1_u"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
+
+                <!-- Over the button, to show to the pilot he can click, there is buttons with a white round background, fancy ! ^^ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/mig21_radarpanel_button1plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/circle_button"/>
+                    <Button
+                        android:id="@+id/mig21_radarpanel_button1minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/circle_button"/>
+                </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#5822">
-                <!-- TODO : buttons images-->
+                android:layout_weight="1">
+
+                <!-- One of the position we could show -->
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_button2middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button2_m"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
+
+                <!-- One of the position we could show -->
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_button2up"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button2_u"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
+
+                <!-- Over the button, to show to the pilot he can click, there is buttons with a white round background, fancy ! ^^ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/mig21_radarpanel_button2plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/circle_button"/>
+                    <Button
+                        android:id="@+id/mig21_radarpanel_button2minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/circle_button"/>
+                </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#5282">
-                <!-- TODO : buttons images-->
+                android:layout_weight="1">
+
+                <!-- One of the position we could show -->
+                <ImageView
+                    android:id="@+id/mig21_radarpanel_button3up"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mig21bis_radarpanel_bkg_button3_u"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
+
+                <!-- Over the button, to show to the pilot he can click, there is buttons with a white round background, fancy ! ^^ -->
+                <Button
+                    android:id="@+id/mig21_radarpanel_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
             </RelativeLayout>
 
         </LinearLayout>

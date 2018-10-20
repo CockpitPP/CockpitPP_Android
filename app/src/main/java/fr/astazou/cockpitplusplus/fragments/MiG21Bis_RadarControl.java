@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,6 +32,23 @@ public class MiG21Bis_RadarControl extends Fragment {
     private ImageView mBackgroundView;
     private LinearLayout mContainer;
 
+    /**My member variables for the images**/
+    private ImageView mButton1middle;
+    private ImageView mButton1up;
+    private ImageView mButton2middle;
+    private ImageView mButton2up;
+    private ImageView mButton3up;
+    private ImageView mLight1;
+    private ImageView mLight2;
+    private ImageView mLight3;
+
+    /**My member variables for the buttons**/
+    private Button mButton1plus;
+    private Button mButton1minus;
+    private Button mButton2plus;
+    private Button mButton2minus;
+    private Button mButton3;
+
     public MiG21Bis_RadarControl() {
         // Required empty public constructor
     }
@@ -44,7 +62,7 @@ public class MiG21Bis_RadarControl extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().registerReceiver(this.mBroadCastNewMessage, new IntentFilter(BroadcastKeys.MIG21BIS));
+        getActivity().registerReceiver(this.mBroadCastNewMessage, new IntentFilter(BroadcastKeys.MIG21BIS_RADARPANEL));
     }
 
     /**
@@ -60,7 +78,93 @@ public class MiG21Bis_RadarControl extends Fragment {
         View view = inflater.inflate(R.layout.fragment_mig21bis_radarcontrol, container, false);
         mBackgroundView = (ImageView) view.findViewById(R.id.layout);
         mContainer = (LinearLayout) view.findViewById(R.id.container);
-        //TODO Bind the buttons/views here and set actions of the buttons here to send actions to DCS
+
+        //Bind the buttons/views here and set actions of the buttons here to send actions to DCS ==>
+        mLight1 = (ImageView) view.findViewById(R.id.mig21_radarpanel_light1);
+        mLight2 = (ImageView) view.findViewById(R.id.mig21_radarpanel_light2);
+        mLight3 = (ImageView) view.findViewById(R.id.mig21_radarpanel_light3);
+        mButton1middle = (ImageView) view.findViewById(R.id.mig21_radarpanel_button1middle);
+        mButton1up = (ImageView) view.findViewById(R.id.mig21_radarpanel_button1up);
+        mButton2middle = (ImageView) view.findViewById(R.id.mig21_radarpanel_button2middle);
+        mButton2up = (ImageView) view.findViewById(R.id.mig21_radarpanel_button2up);
+        mButton3up = (ImageView) view.findViewById(R.id.mig21_radarpanel_button3up);
+
+        mButton1plus = (Button) view.findViewById(R.id.mig21_radarpanel_button1plus);
+        mButton1plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mButton1middle.getVisibility() == View.VISIBLE) {
+                    //send command to put button to next step
+                    sendCommand(MiG21Bis_Commands.RadarState,"1");
+                } else if(mButton1up.getVisibility() == View.VISIBLE) {
+                    //Do nothing, already up...
+                } else {
+                    //No image is visible, it means we are in default position, let's move to the middle position then! Sending command to put button to middle
+                    sendCommand(MiG21Bis_Commands.RadarState,"0.5");
+                }
+            }
+        });
+        mButton1minus = (Button) view.findViewById(R.id.mig21_radarpanel_button1minus);
+        mButton1minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mButton1middle.getVisibility() == View.VISIBLE) {
+                    //send command to put button to lower step
+                    sendCommand(MiG21Bis_Commands.RadarState,"0");
+                } else if(mButton1up.getVisibility() == View.VISIBLE) {
+                    //let's move to the middle position then! Sending command to put button to middle
+                    sendCommand(MiG21Bis_Commands.RadarState,"0.5");
+                } else {
+                    //No image is visible, it means we are in default position, Do nothing, already down...
+                }
+            }
+        });
+
+        mButton2plus = (Button) view.findViewById(R.id.mig21_radarpanel_button2plus);
+        mButton2plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mButton2middle.getVisibility() == View.VISIBLE) {
+                    //send command to put button to next step
+                    sendCommand(MiG21Bis_Commands.RadarLow,"1");
+                } else if(mButton2up.getVisibility() == View.VISIBLE) {
+                    //Do nothing, already up...
+                } else {
+                    //No image is visible, it means we are in default position, let's move to the middle position then! Sending command to put button to middle
+                    sendCommand(MiG21Bis_Commands.RadarLow,"0.5");
+                }
+            }
+        });
+        mButton2minus = (Button) view.findViewById(R.id.mig21_radarpanel_button2minus);
+        mButton2minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mButton2middle.getVisibility() == View.VISIBLE) {
+                    //send command to put button to lower step
+                    sendCommand(MiG21Bis_Commands.RadarLow,"0");
+                } else if(mButton2up.getVisibility() == View.VISIBLE) {
+                    //let's move to the middle position then! Sending command to put button to middle
+                    sendCommand(MiG21Bis_Commands.RadarLow,"0.5");
+                } else {
+                    //No image is visible, it means we are in default position, Do nothing, already down...
+                }
+            }
+        });
+
+        mButton3 = (Button) view.findViewById(R.id.mig21_radarpanel_button3);
+        mButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mButton3up.getVisibility() == View.VISIBLE) {
+                    //let's move to the bottom position then! Sending command to put button to bottom
+                    sendCommand(MiG21Bis_Commands.RadarBeam,"0");
+                } else {
+                    //No image is visible, it means we are in default position, let's move to top position :)
+                    sendCommand(MiG21Bis_Commands.RadarBeam,"1");
+                }
+            }
+        });
+
         return view;
     }
 
@@ -70,11 +174,23 @@ public class MiG21Bis_RadarControl extends Fragment {
     BroadcastReceiver mBroadCastNewMessage = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(intent.getAction().contains(BroadcastKeys.MIG21BIS)) {
-                String armamentPanel = intent.getExtras().getString(BroadcastKeys.MIG21BIS);
+            if(intent.getAction().contains(BroadcastKeys.MIG21BIS_RADARPANEL)) {
+                String armamentPanel = intent.getExtras().getString(BroadcastKeys.MIG21BIS_RADARPANEL);
                 if(armamentPanel != null && !armamentPanel.isEmpty()){
                     String[] panel_data = armamentPanel.split(";");
-                    //TODO animate the view with the data we get
+                    mButton1up.setVisibility((panel_data[0].equals("1")?View.VISIBLE:View.INVISIBLE));
+                    mButton1middle.setVisibility((panel_data[0].equals("0.5")?View.VISIBLE:View.INVISIBLE));
+
+                    mButton2up.setVisibility((panel_data[1].equals("1")?View.VISIBLE:View.INVISIBLE));
+                    mButton2middle.setVisibility((panel_data[1].equals("0.5")?View.VISIBLE:View.INVISIBLE));
+
+                    mButton3up.setVisibility((panel_data[2].equals("1")?View.VISIBLE:View.INVISIBLE));
+
+                    mLight1.setVisibility(panel_data[3].equals("1")?View.VISIBLE:View.INVISIBLE);
+
+                    mLight2.setVisibility(panel_data[4].equals("1")?View.VISIBLE:View.INVISIBLE);
+
+                    mLight3.setVisibility(panel_data[5].equals("1")?View.VISIBLE:View.INVISIBLE);
                 }
             }
 

@@ -123,19 +123,11 @@ public class Konector extends Service {
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.UH1H_ARMAMENT).putExtra(BroadcastKeys.UH1H_ARMAMENT,messageArray[3]));
                                 } else if (messageArray[2].equals(getString(R.string.av8bna)) && messageArray.length > 3) {
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.AV8BNA_NOZZLE).putExtra(BroadcastKeys.AV8BNA_NOZZLE,messageArray[3]));
-                                }  else if (messageArray[2].equals(getString(R.string.a10c)) && messageArray.length > 3) {
-                                    /*
-                                        D/KonectorTAG: A10C MessageArray =
-                                        [0] Cockpit++,
-                                        [1] 3,
-                                        [2] A-10C,
-                                        [3] -0.05029670894146,
-                                        [4] 0.46585440635681;0;0;0;0.46585440635681;0.73500490188599;0.73500490188599;0.46585440635681;0;0;0;0;0;0.34873324632645;0.84212499856949;0;1
-
-                                    */
+                                } else if (messageArray[2].equals(getString(R.string.a10c)) && messageArray.length > 3) {
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.A10C_VVI).putExtra(BroadcastKeys.A10C_VVI,messageArray[3]));
                                     sendBroadcast(new Intent().setAction(BroadcastKeys.A10C_HSI).putExtra(BroadcastKeys.A10C_HSI,messageArray[4]));
-                                    //Log.d(TAG, "A10C MessageArray[4] = " + messageArray[4]);
+                                } else if (messageArray[2].equals(getString(R.string.mig21bis)) && messageArray.length > 3) {
+                                    sendBroadcast(new Intent().setAction(BroadcastKeys.MIG21BIS_RADARPANEL).putExtra(BroadcastKeys.MIG21BIS_RADARPANEL,messageArray[3]));
                                 }
                             } else if(Integer.valueOf(MyApp.LUA_VERSION) > Integer.valueOf(messageArray[1])){
                                 //Log.w(LOGGER, "Oh oh, the LUA is not up to date");
